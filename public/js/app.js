@@ -1,28 +1,27 @@
-var app = angular.module("LunchApp", ["ngRoute","ngVidBg"]);
+var app = angular.module("LunchApp", ["ngVidBg", "ngAnimate","ui.router"]);
 
-app.config(function($routeProvider) {
-  $routeProvider
-    .when('/home', {
-      templateUrl: 'views/home.html'
-    })
-    .when('/login', {
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
+  
+  $stateProvider
+    .state('login', {
+      url: '/login',
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl'
     })
-    .when('/signup', {
+    .state('signup', {
+      url: '/signup',
       templateUrl: 'views/signup.html',
       controller: 'SignUpCtrl'
     })
-    .when('/form', {
+    .state('form', {
+      url: '/form',
       templateUrl: 'views/form.html',
       resolve: {
         logincheck: checkLoggedin
       }
     })
-    .otherwise({
-      redirectTo: '/login'
-    })
-});
+  $urlRouteProvider.otherwise('/');
+}]);
 
 var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
   var deferred = $q.defer();

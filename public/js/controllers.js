@@ -1,4 +1,4 @@
-app.controller("NavCtrl", function($rootScope, $scope, $http, $location) {
+app.controller("NavCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.logout = function() {
     $http.post("/logout")
       .success(function() {
@@ -8,7 +8,7 @@ app.controller("NavCtrl", function($rootScope, $scope, $http, $location) {
   }
 });
 
-app.controller("LunchCtrl", function($rootScope, $scope, $http, $location) {
+app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.logout = function() {
     $http.post("/logout")
       .success(function() {
@@ -18,7 +18,7 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location) {
   }
 });
 
-app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location) {
+app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $state) {
    $scope.resources = [
             'http://techslides.com/demos/sample-videos/small.webm',
             '*.ogv',
@@ -43,7 +43,7 @@ app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location) {
   }
 });
 
-app.controller("LoginCtrl", function($location, $scope, $http, $rootScope) {
+app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $state) {
   $scope.resources = [
             'http://techslides.com/demos/sample-videos/small.webm',
             '*.ogv',

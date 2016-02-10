@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-ui-router": "^0.2.18",
     "angular-vidbg": "0.0.12",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.2",
