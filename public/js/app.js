@@ -16,10 +16,31 @@ app.config(function($stateProvider,$urlRouterProvider) {
     .state('form', {
       url: '/form',
       templateUrl: 'views/form.html',
+      controller: 'FormCtrl',
       resolve: {
         logincheck: checkLoggedin
       }
     })
+    .state('form.welcome', {
+            url: '/welcome',
+            templateUrl: 'views/form-welcome.html'
+        })
+        
+        // url will be /form/interests
+        .state('form.statements', {
+            url: '/statements',
+            templateUrl: 'views/form-statements.html'
+        })
+        
+        // url will be /form/payment
+        .state('form.adultContactInfo1', {
+            url: '/adultContactInfo1',
+            templateUrl: 'views/form-adultContactInfo1.html'
+        })
+        .state('form.adultContactInfo2', {
+            url: '/adultContactInfo2',
+            templateUrl: 'views/form-adultContactInfo2.html'
+        })
   $urlRouterProvider.otherwise('login');
 });
 

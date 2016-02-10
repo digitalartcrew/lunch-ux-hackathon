@@ -12,7 +12,35 @@
              <a href="#logout" ng-click="logout()">Logout</a>
            </span>
            </li>
+
+
+           <li><a ui-sref-active="active" ui-sref="form.welcome"><span>1</span> Profile</a></li>
+            <li><a ui-sref-active="active" ui-sref="form.statements"><span>2</span> Interests</a></li>
+            <li><a ui-sref-active="active" ui-sref="form.adultContactInfo1"><span>3</span> Payment</a></li>
     </ul>
   </div>
 </nav>
+
+
+<div class="row">
+<div class="col-xs-2">
+    
+</div>
+<div class="col-xs-10">
+        
+  <div id="form-container">
+  
+      <div class="page-header text-center">
+
+      </div>
+      
+<h1>Form page is here!!!!</h1>
+          <div id="form-views" ui-view></div>
+
+  
+  </div>
+  
+
+</div>
+</div>
 

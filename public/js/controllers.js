@@ -18,6 +18,10 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
   }
 });
 
+app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
+  $scope.formData = {};
+});
+
 app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $state) {
    $scope.resources = [
             'http://techslides.com/demos/sample-videos/small.webm',
