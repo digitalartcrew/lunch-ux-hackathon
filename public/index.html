@@ -6,19 +6,10 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="css/vidBg.css">
-        <!--MapBox-->
-        
-        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     </head>
     <body>
-        <nav ng-controller="NavCtrl">
-           <span ng-show="!currentUser">
-           </span>
-       
-        </nav>
-        <div ng-view>
+        <div ui-view>
         </div>
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
@@ -26,16 +17,13 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <!-- Angular -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    
-  
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-         
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
         
         <script src="./js/app.js" type="text/javascript"></script>
         <script src="./js/controllers.js" type="text/javascript"></script>
         <script src="./js/vidBg.js" type="text/javascript"></script>
-     
        
     </body>
 </html>

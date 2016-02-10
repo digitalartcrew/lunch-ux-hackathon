@@ -1,11 +1,11 @@
 var app = angular.module("LunchApp", ["ngVidBg", "ngAnimate","ui.router"]);
 
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
+app.config(function($stateProvider,$urlRouterProvider) {
   
   $stateProvider
     .state('login', {
       url: '/login',
-      templateUrl: 'views/login.html',
+      templateUrl: '/views/login.html',
       controller: 'LoginCtrl'
     })
     .state('signup', {
@@ -20,8 +20,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,$url
         logincheck: checkLoggedin
       }
     })
-  $urlRouteProvider.otherwise('/');
-}]);
+  $urlRouterProvider.otherwise('login');
+});
 
 var checkLoggedin = function($q, $timeout, $http, $location, $rootScope) {
   var deferred = $q.defer();
