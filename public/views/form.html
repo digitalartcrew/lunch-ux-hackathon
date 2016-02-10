@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span><img id="newsroom" src="../img/usda.png"></span><h4 id="text">Lunch UX</h4><p id="new2">Hackathon</p></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+   
+		<li>Hi {{ currentUser.username }}</li>
+	
+		<li>
+		    <span ng-show="currentUser">
+             <a href="#logout" ng-click="logout()">Logout</a>
+           </span>
+           </li>
+  
+    </ul>
+   
+  </div>
+</nav>
