@@ -30,4 +30,4 @@ app.use(bodyParser.urlencoded({
 require('./routes/auth.js')(app,passport); //load our routes and full configured passport
 app.listen(process.env.PORT || 3000, function(req,res){
 	console.log("App running on localost 3000");
-})
+});

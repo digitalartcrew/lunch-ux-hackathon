@@ -1,31 +1,31 @@
-body { margin:0;
-       padding:0; }
+/*body { margin:0;
+       padding:0; }*/
 
-.map { 
+/*.map { 
     position:absolute;
     margin-top: 40px;
         width:100%; 
-       }
+       }*/
 
-.container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-   margin-top: -50px;
+.navbarContainer {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -50px;
 }
 
-.nav>li {
-   /* position: absolute;
-    display: block;*/
-    padding: 10px;
+/*.nav>li {
+  position: absolute;
+  display: block;
+  padding: 10px;
 	margin-left: 0px;
-}
+}*/
 
 
-#logo {
+/*#logo {
 	width: 50%;
-}
+}*/
 
 .form-signin {
   max-width: 330px;
@@ -71,34 +71,144 @@ body { margin:0;
     position: fixed;
 }
 
-.logger {
-   /* margin:auto;*/
+/*.logger {
+    margin:auto;
     width: 1000px;
     height: 1000px;
-   /* background: rgba(0,0,0,.4);*/
+    background: rgba(0,0,0,.4);
     position: fixed;
-}
+}*/
 
-#newsroom {
+#usdaLogo {
 	width: 5%;
-	position: relative;
-	float: left;
-  margin-top: 40px;
+  /*display: inline-block;*/
+	/*position: relative;*/
+	/*float: left;*/
+  margin-top: 50px;
 	margin-right: 30px;
 }
 
-#text {
+/*#text {
 	margin-left: 30px;
   margin-top: 36px;
   margin-bottom: 60px;
-}
+}*/
 
-#new2 {
+/*#new2 {
 	     margin-top: -60px;
 	    font-size: 12px;
 
-}
+}*/
 
 .navbar-right {
 	color: #fff;
+}
+
+#navbar{
+  height:70px;
+}
+
+#progressHeader{
+  color: black;
+}
+
+#progressHeader{
+  position: relative;
+  left: 80px;
+}
+
+#progressHeader a{ 
+  color:#FFF; 
+  display:inline-block; 
+  height:50px; 
+  font-size:12px; 
+  /*margin:0 auto 10px; */
+  margin-right: 40px;
+  text-align:center; 
+  text-transform:uppercase; 
+  color: gray;
+}
+
+#progressHeader span{ 
+  background:#080808; 
+  display:block; 
+  height:30px; 
+  /*text-align: center;*/
+  margin:0 auto 10px; 
+  padding-top:5px; 
+  width:30px; 
+  border-radius:50%; 
+  /*color:black;*/
+}
+
+#usernameNav{
+  color:gray;
+  margin-top: 20px;
+}
+
+#helpBox{
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-right: 5px;
+  height: 550px;
+}
+
+#formBox{
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 550px;
+}
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}
+    
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+    -moz-animation:slideInRight 0.5s both ease;
+    animation:slideInRight 0.5s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+    -moz-animation:slideOutLeft 0.5s both ease;
+    animation:slideOutLeft 0.5s both ease;   
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {  
+    to      { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to      { -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(200%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { -moz-transform:translateX(200%); }
+    to      { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from    { -webkit-transform:translateX(200%); }
+    to      { -webkit-transform: translateX(0); }
 }

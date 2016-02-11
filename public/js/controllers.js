@@ -5,7 +5,7 @@ app.controller("NavCtrl", function($rootScope, $scope, $http, $location, $state)
         $rootScope.currentUser = null;
         $location.url("/login");
       });
-  }
+  };
 });
 
 app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $state) {
@@ -15,7 +15,7 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
         $rootScope.currentUser = null;
         $location.url("/login");
       });
-  }
+  };
 });
 
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
@@ -44,7 +44,7 @@ app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $sta
           $location.url("/form");
         });
     }
-  }
+  };
 });
 
 app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $state) {
@@ -67,5 +67,5 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
         $rootScope.currentUser = response;
         $location.url("/form");
       });
-  }
+  };
 });

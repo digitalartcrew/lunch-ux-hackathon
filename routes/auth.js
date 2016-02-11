@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
     app.post("/logout", function(req, res) {
       req.logOut();
       res.send(200);
-    })
+    });
 
     // loggedin
     app.get("/loggedin", function(req, res) {
