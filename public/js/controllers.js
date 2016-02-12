@@ -41,7 +41,7 @@ app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $sta
       $http.post('/signup', user)
         .success(function(user) {
           $rootScope.currentUser = user;
-          $location.url("/form");
+         $state.go('form.welcome');
         });
     }
   };
@@ -65,7 +65,7 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
     $http.post('/login', user)
       .success(function(response) {
         $rootScope.currentUser = response;
-        $location.url("/form");
+        $state.go('form.welcome');
       });
   };
 });
