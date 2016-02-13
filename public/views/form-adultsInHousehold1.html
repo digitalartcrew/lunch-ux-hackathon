@@ -1,6 +1,25 @@
 <h1>Adults in Household 1</h1>
 <div class="form-group row">
+<h5>No adult household members currently added yet!</h5>
+    <div>
+    <form ng-show="showForm"><div style="margin:0;padding:0">
+    <h5>Adult’s Information (required)</h5>
+      <div>
+        <label for="username">First Name</label>
+        <input id="user_first_name" name="" size="30" type="text" />
+
+        <label for="name">Last Name</label>
+        <input id="user_last_name" name="" size="30" type="text" />
+      </div>
+    </form>
+    </div>
+
+
+
+
+
 <div class="col-xs-6 col-xs-offset-3">
+    <div class="btn btn-block btn-info" ng-click="showForm = !showForm"> + Add an adult household member</div>
     <a ui-sref="form.adultsInHousehold2" class="btn btn-block btn-info">
    Continue<span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
