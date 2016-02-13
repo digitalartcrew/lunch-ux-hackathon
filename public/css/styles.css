@@ -7,6 +7,13 @@
         width:100%; 
        }*/
 
+.btn-info {
+  width: 120px;
+  margin-top: 25px;
+  margin-right: 10px;
+  letter-spacing: 2px;
+}
+
 .navbarContainer {
   padding-right: 15px;
   padding-left: 15px;
