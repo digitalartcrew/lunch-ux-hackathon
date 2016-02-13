@@ -80,7 +80,7 @@
 }*/
 
 #usdaLogo {
-	width: 5%;
+	width: 40px;
   /*display: inline-block;*/
 	/*position: relative;*/
 	/*float: left;*/
@@ -88,39 +88,22 @@
 	margin-right: 30px;
 }
 
-/*#text {
-	margin-left: 30px;
-  margin-top: 36px;
-  margin-bottom: 60px;
-}*/
-
-/*#new2 {
-	     margin-top: -60px;
-	    font-size: 12px;
-
-}*/
 
 .navbar-right {
 	color: #fff;
 }
 
-#navbar{
-  height:70px;
-}
-
-
 
 #progressHeader{
   position: relative;
-  
   width: 100%;
   color: black;
 }
 
 #progressHeader li{
 margin-left: -45px;
-margin-top: -40px;
-left: 350px;
+margin-top: 10px;
+left: 250px;
 }
 
 #progressHeader a{ 
