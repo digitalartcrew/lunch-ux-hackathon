@@ -108,13 +108,19 @@
   height:70px;
 }
 
-#progressHeader{
-  color: black;
-}
+
 
 #progressHeader{
   position: relative;
-  left: 80px;
+  
+  width: 100%;
+  color: black;
+}
+
+#progressHeader li{
+margin-left: -45px;
+margin-top: -40px;
+left: 350px;
 }
 
 #progressHeader a{ 
@@ -133,12 +139,10 @@
   background:#080808; 
   display:block; 
   height:30px; 
-  /*text-align: center;*/
-  margin:0 auto 10px; 
+  margin:30px auto 10px; 
   padding-top:5px; 
   width:30px; 
   border-radius:50%; 
-  /*color:black;*/
 }
 
 #usernameNav{
@@ -151,14 +155,14 @@
   border: 2px solid black;
   border-radius: 5px;
   padding-right: 5px;
-  height: 550px;
+  height: 100%;
 }
 
 #formBox{
   margin-top: 20px;
   border: 2px solid black;
   border-radius: 5px;
-  height: 550px;
+  height: 100%;
 }
 
 /* ANIMATION STYLINGS
