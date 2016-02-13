@@ -21,8 +21,6 @@
       <li><a ui-sref-active="active" ui-sref="#">Hi {{ currentUser.username }}</a></li>
       <li><a ui-sref-active="active" ui-sref="#"> Help</a></li>
       <li><a ui-sref-active="active" ng-click="logout()">Logout</a></li>
-
-  
     </ul>
   </div>
 </div>
@@ -31,21 +29,21 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-3">
-      <div id="helpBox">
+    <div class="col-xs-3 panel-default">
+     <div class="panel-heading">Info Center</div>
+      <div class="panel-body">
         <p>Click ￼ icons to get more information!</p>
       </div>
-
     </div>
 
-    <div class="col-xs-9">
-      <div id="formBox">
+    <div class="col-xs-9 panel-default">
+      <div class="panel-heading">{{title}}</div>
+      <div class="panel-body">
         <div id="form-views" ui-view></div>
         
       </div>
-
-
+      </div>
     </div>
   </div>
-</div>
+
 

@@ -102,7 +102,6 @@
 
 #progressHeader li{
 margin-left: -45px;
-margin-top: 10px;
 left: 250px;
 }
 
@@ -110,7 +109,7 @@ left: 250px;
   color:#FFF; 
   display:inline-block; 
   height:50px; 
-  font-size:12px; 
+  font-size:10px; 
   /*margin:0 auto 10px; */
   margin-right: 40px;
   text-align:center; 

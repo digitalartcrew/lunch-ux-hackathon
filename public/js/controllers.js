@@ -20,16 +20,17 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
 
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.formData = {};
+  $scope.title = "Test Header"
 });
 
 app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $state) {
-   $scope.resources = [
-            'http://techslides.com/demos/sample-videos/small.webm',
-            '*.ogv',
-            '*.mp4',
-            '*.swf'
-        ];
-        $scope.poster = 'http://placehold.it/1280x720';
+   // $scope.resources = [
+   //          '../img/lime.png',
+   //          '*.ogv',
+   //          '*.mp4',
+   //          '*.swf'
+   //      ];
+        $scope.poster = '../img/fruit.jpg';
         $scope.fullScreen = true;
         $scope.muted = true;
         $scope.zIndex = '22';
@@ -48,13 +49,13 @@ app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $sta
 });
 
 app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $state) {
-  $scope.resources = [
-            'http://techslides.com/demos/sample-videos/small.webm',
-            '*.ogv',
-            '*.mp4',
-            '*.swf'
-        ];
-        $scope.poster = 'http://placehold.it/1280x720';
+  // $scope.resources = [
+  //           './img/lime.png',
+  //           '*.ogv',
+  //           '*.mp4',
+  //           '*.swf'
+  //       ];
+        $scope.poster = '../img/fruit.jpg';
         $scope.fullScreen = true;
         $scope.muted = true;
         $scope.zIndex = '22';
