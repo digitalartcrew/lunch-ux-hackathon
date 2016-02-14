@@ -263,3 +263,31 @@ input[type=checkbox] {
 .checkbox{
   margin-bottom: 20px;
 }
+
+.csLabel{
+  display: inline-block;
+}
+
+.csContainer{
+  width: 300px;
+}
+
+.radio-inline{
+  margin-right: 40px;
+}
+
+.radioHeader{
+  display: inline-block;
+  width: 100px;
+  height: ;
+  text-align: center;
+}
+
+.headContainer{
+  margin-left: 100px;
+}
+
+.statements{
+  height: 450px;
+  overflow-y: scroll;
+}
