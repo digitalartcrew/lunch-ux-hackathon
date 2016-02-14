@@ -1,0 +1,23 @@
+<div class="container">
+<div class="row">
+<h1>Add a new adult!</h1>
+<div class="col-md-10-offset-1">
+
+
+
+<form action="javascript:void(0)" ng-submit="createadult(adult)">
+	<label for="address">Address</label>
+	<input type="text" ng-model="adult.address" id="address">
+	<label for="city">City</label>
+	<input type="text" ng-model="adult.city" id="city">
+	<label for="state">State</label>
+	<input type="text" ng-model="adult.state" id="state">
+	<label for="zip">Zip</label>
+	<input type="text" ng-model="adult.zip" id="zip">
+	<input type="submit" value="Add adult">
+</form>
+</div>
+<a href="/adults">See all adults</a>
+</div>
+</div>
+

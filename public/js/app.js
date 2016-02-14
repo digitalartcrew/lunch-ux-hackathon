@@ -160,6 +160,46 @@ app.config(function($stateProvider,$urlRouterProvider) {
     templateUrl: 'views/form-review.html'
   })
 
+  .state('/adults', {
+    controller: "AdultsController",
+    templateUrl: "views/form-adultContactInfo1.html"
+  })
+
+  .state('/adults/new', {
+    controller: "NewAdultController",
+    templateUrl: "views/a-new.html"
+  })
+
+  .state('/adults/:id', {
+    controller: "AdultController",
+    templateUrl: "views/a-show.html"
+  })
+
+  .state('/adults/:id/edit', {
+    controller: "EditAdultController",
+    templateUrl: "views/a-edit.html"
+  })
+
+    .state('/children', {
+    controller: "ChildsController",
+    templateUrl: "views/form-ChildContactInfo1.html"
+  })
+
+  .state('/children/new', {
+    controller: "NewChildController",
+    templateUrl: "views/c-new.html"
+  })
+
+  .state('/children/:id', {
+    controller: "ChildController",
+    templateUrl: "views/c-show.html"
+  })
+
+  .state('/children/:id/edit', {
+    controller: "EditChildController",
+    templateUrl: "views/c-edit.html"
+  })
+
 
   $urlRouterProvider.otherwise('login');
   });

@@ -70,3 +70,88 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
       });
   };
 });
+
+app.controller("AdultsController", ['$scope', '$location', 'AdultService', function($scope, $location, AdultService){
+
+  $scope.adults = AdultService.query();
+
+  $scope.deleteAdult = function(adult){
+    adult.$delete(function(adult){
+      $scope.adults.splice($scope.adults.indexOf(adult),1);
+    });
+  };
+}]);
+
+app.controller("NewAdultController", ['$scope', '$location', 'AdultService', function($scope, $location, AdultService){
+  $scope.createAdult = function(adult){
+    AdultService.save(adult, function(){
+      $location.path('/');
+    });
+  };
+}]);
+
+app.controller("AdultController", ['$scope', '$location', '$routeParams', 'AdultService', function($scope, $location, $routeParams, AdultService){
+  AdultService.get({id: $routeParams.id}, function(adult){
+     $scope.adult = adult;
+  }, function(err){
+    $location.path('/');
+  });
+}]);
+
+
+app.controller("EditAdultController", ['$scope', '$location', '$routeParams', 'AdultService', function($scope, $location, $routeParams, AdultService){
+  AdultService.get({id: $routeParams.id},function(adult){
+    $scope.adult = adult;
+  }, function(err){
+    $location.path('/');
+  });
+  $scope.editAdult = function(adult){
+    console.log("This is working!");
+    $scope.adult.$update(function(){
+      $location.path('/');
+    });
+  };
+}]);
+
+
+app.controller("ChildsController", ['$scope', '$location', 'ChildService', function($scope, $location, childService){
+
+  $scope.children = ChildService.query();
+
+  $scope.deleteChild = function(child){
+    child.$delete(function(child){
+      $scope.children.splice($scope.children.indexOf(child),1);
+    });
+  };
+}]);
+
+app.controller("NewChildController", ['$scope', '$location', 'ChildService', function($scope, $location, childService){
+  $scope.createChild = function(child){
+    childService.save(child, function(){
+      $location.path('/');
+    });
+  };
+}]);
+
+app.controller("ChildController", ['$scope', '$location', '$routeParams', 'ChildService', function($scope, $location, $routeParams, childService){
+  childService.get({id: $routeParams.id}, function(child){
+    $scope.child = child;
+  }, function(err){
+    $location.path('/');
+  });
+}]);
+
+
+app.controller("EditChildController", ['$scope', '$location', '$routeParams', 'ChildService', function($scope, $location, $routeParams, childService){
+  childService.get({id: $routeParams.id},function(child){
+    $scope.child = child;
+  }, function(err){
+    $location.path('/');
+  });
+  $scope.editChild = function(child){
+    console.log("This is working!");
+    $scope.child.$update(function(){
+      $location.path('/');
+    });
+  };
+}]);
