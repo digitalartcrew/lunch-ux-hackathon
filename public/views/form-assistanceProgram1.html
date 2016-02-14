@@ -1,22 +1,45 @@
-<h1>Assistance Program 1</h1>
+<!-- <h1>Assistance Program 1</h1> -->
 
-Does anyone in your household participate in one or more of the following assistance programs ? Check all that apply.
+<h5>Does anyone in your household participate in one or more of the following assistance programs ? Check all that apply.</h5>
 <!-- SNAP FDPIR TANF None -->
-<form action="demo_form.asp" method="get">
-  <input type="checkbox" name="snap" value="snap"> SNAP<br>
-  <input type="checkbox" name="fdpir" value="fdpir"> FDPIR<br>
-  <input type="checkbox" name="tanf" value="tanf"> TANF<br>
-  <input type="checkbox" name="none" value="none"> NONE<br>
-  <input type="submit" value="Submit">
-</form>
+<!-- <form> -->
+<div class="chkContainer">
+    <div class="checkbox">
+        <label for="snap">
+            <input type="checkbox" name="snap" value="snap" id="snap"> SNAP<br>
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="fdpir">
+            <input type="checkbox" name="fdpir" value="fdpir" id="fdpir"> FDPIR<br>
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="tanf">
+            <input type="checkbox" name="tanf" value="tanf" id="tanf"> TANF<br>
+        </label>
+    </div>
+    <div class="checkbox">
+        <label for="none">
+            <input type="checkbox" name="none" value="none" id="none"> NONE<br>
+        </label>
+    </div>
+</div>
+  <!-- <input type="submit" value="Submit"> -->
+<!-- </form> -->
 
-Please enter the case number of just ONE of your assistance program benefits.
-CASE NUMBER
-<div class="input-group">
+<h5>Please enter the case number of just ONE of your assistance program benefits.</h5>
+
+<!-- <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">case number</span>
   <input type="text" class="form-control" placeholder="Case Number" aria-describedby="basic-addon1" name="casenumber">
+</div> -->
+
+<div class="form-group spacing" id="daytime">
+  <label for="phone">CASE NUMBER</label>
+  <input type="phone" class="form-control" id="caseNumber">
 </div>
-<div class="checkbox">
+<!-- <div class="checkbox">
   <label>
     <input type="checkbox" value="">
     Option one is this and that&mdash;be sure to include why it's great
@@ -24,10 +47,10 @@ CASE NUMBER
 </div>
 <div class="checkbox disabled">
   <label>
-    <input type="checkbox" value="" disabled>
+    <input type="checkbox" value="">
     Option two is disabled
   </label>
-</div>
+</div> -->
 
 
 <div class="form-group row">

@@ -232,3 +232,34 @@ left: 250px;
 #state{
   margin-right: 20px;
 }
+
+.form-control{
+  border-radius: 0;
+}
+
+.inputGroup{
+  margin-top: 70px;
+}
+
+/*#signature{
+  width: 200px;
+  margin-right: 20px
+}*/
+
+input[type=checkbox] {
+  /* All browsers except webkit*/
+  transform: scale(1.5);
+
+  /* Webkit browsers*/
+  -webkit-transform: scale(1.5);
+}
+
+.chkContainer{
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.checkbox{
+  margin-bottom: 20px;
+}
