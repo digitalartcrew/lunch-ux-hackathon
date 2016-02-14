@@ -207,3 +207,28 @@ left: 250px;
     from    { -webkit-transform:translateX(200%); }
     to      { -webkit-transform: translateX(0); }
 }
+
+#firstName{
+  display: inline-block;
+}
+
+#lastName{
+  display: inline-block;
+
+}
+.spacing{
+  display: inline-block;
+}
+
+.firstRow{
+  width: 300px;
+  margin-right: 20px;
+}
+
+#daytime{
+  margin-right: 20px;
+}
+
+#state{
+  margin-right: 20px;
+}
