@@ -46,36 +46,36 @@ module.exports = function(app, passport) {
 
     //Index GET /api/adults/
 
-app.get('/', function(req,res){
-  db.Adult.find({}, function(err,adults){
-    res.status(200).send(adults);
-  });
-});
+    app.get('/', function(req,res){
+      db.Adult.find({}, function(err,adults){
+        res.status(200).send(adults);
+      });
+    });
 
 //Create POST /api/adults/
 
-app.post('/', function(req,res){
-  db.Adult.create(req.body,function(err,adult){
-    res.status(201).send(adult);
-  });
-});
+    app.post('/', function(req,res){
+    db.Adult.create(req.body,function(err,adult){
+      res.status(201).send(adult);
+    });
+    });
 
 //Get SHOW /api/adults/:id
 
-app.get('/:id', function(req,res){
-  db.Adult.findById(req.params.id, function(err,adult){
-    res.status(200).send(adult);
+  app.get('/:id', function(req,res){
+    db.Adult.findById(req.params.id, function(err,adult){
+      res.status(200).send(adult);
+    });
   });
-});
 
 //Update PUT /api/adults/:id
 
-app.put('/:id',function(req,res){
-  db.Adult.findByIdAndUpdate(req.params.id,req.body, function(err,adult){
+  app.put('/:id',function(req,res){
+    db.Adult.findByIdAndUpdate(req.params.id,req.body, function(err,adult){
      if (err) res.status(500).send({error: "Double check for error"});
-    res.status(201).send(adult);
+     res.status(201).send(adult);
+   });
   });
-});
 
 //Delete 
 
@@ -113,9 +113,9 @@ app.get('/:id', function(req,res){
 
 app.put('/:id',function(req,res){
   db.Child.findByIdAndUpdate(req.params.id,req.body, function(err,child){
-     if (err) res.status(500).send({error: "Double check for error"});
-    res.status(201).send(child);
-  });
+   if (err) res.status(500).send({error: "Double check for error"});
+   res.status(201).send(child);
+ });
 });
 
 //Delete 

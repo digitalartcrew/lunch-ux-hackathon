@@ -71,7 +71,7 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
   };
 });
 
-app.controller("AdultsController", ['$scope', '$location', 'AdultService', function($scope, $location, AdultService){
+app.controller("AdultsController", function($scope, $location, AdultService){
 
   $scope.adults = AdultService.query();
 
@@ -80,26 +80,26 @@ app.controller("AdultsController", ['$scope', '$location', 'AdultService', funct
       $scope.adults.splice($scope.adults.indexOf(adult),1);
     });
   };
-}]);
+});
 
-app.controller("NewAdultController", ['$scope', '$location', 'AdultService', function($scope, $location, AdultService){
+app.controller("NewAdultController", function($scope, $location, AdultService){
   $scope.createAdult = function(adult){
     AdultService.save(adult, function(){
       $location.path('/');
     });
   };
-}]);
+});
 
-app.controller("AdultController", ['$scope', '$location', '$routeParams', 'AdultService', function($scope, $location, $routeParams, AdultService){
+app.controller("AdultController", function($scope, $location, $routeParams, AdultService){
   AdultService.get({id: $routeParams.id}, function(adult){
      $scope.adult = adult;
   }, function(err){
     $location.path('/');
   });
-}]);
+});
 
 
-app.controller("EditAdultController", ['$scope', '$location', '$routeParams', 'AdultService', function($scope, $location, $routeParams, AdultService){
+app.controller("EditAdultController", function($scope, $location, $routeParams, AdultService){
   AdultService.get({id: $routeParams.id},function(adult){
     $scope.adult = adult;
   }, function(err){
@@ -111,10 +111,10 @@ app.controller("EditAdultController", ['$scope', '$location', '$routeParams', 'A
       $location.path('/');
     });
   };
-}]);
+});
 
 
-app.controller("ChildsController", ['$scope', '$location', 'ChildService', function($scope, $location, childService){
+app.controller("ChildsController", function($scope, $location, childService){
 
   $scope.children = ChildService.query();
 
@@ -123,26 +123,26 @@ app.controller("ChildsController", ['$scope', '$location', 'ChildService', funct
       $scope.children.splice($scope.children.indexOf(child),1);
     });
   };
-}]);
+});
 
-app.controller("NewChildController", ['$scope', '$location', 'ChildService', function($scope, $location, childService){
+app.controller("NewChildController", function($scope, $location, childService){
   $scope.createChild = function(child){
     childService.save(child, function(){
       $location.path('/');
     });
   };
-}]);
+});
 
-app.controller("ChildController", ['$scope', '$location', '$routeParams', 'ChildService', function($scope, $location, $routeParams, childService){
+app.controller("ChildController", function($scope, $location, $routeParams, childService){
   childService.get({id: $routeParams.id}, function(child){
     $scope.child = child;
   }, function(err){
     $location.path('/');
   });
-}]);
+});
 
 
-app.controller("EditChildController", ['$scope', '$location', '$routeParams', 'ChildService', function($scope, $location, $routeParams, childService){
+app.controller("EditChildController", function($scope, $location, $routeParams, childService){
   childService.get({id: $routeParams.id},function(child){
     $scope.child = child;
   }, function(err){
@@ -154,4 +154,4 @@ app.controller("EditChildController", ['$scope', '$location', '$routeParams', 'C
       $location.path('/');
     });
   };
-}]);
+});
