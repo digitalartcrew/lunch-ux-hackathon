@@ -25,7 +25,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
   })
   .state('form.welcome', {
     url: '/welcome',
-    templateUrl: 'views/form-welcome.html'
+    templateUrl: 'views/form-welcome.html',
+    controller: 'WelcomeCtrl'
   })
   
   // url will be /form/statements

@@ -20,7 +20,12 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
 
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.formData = {};
-  $scope.title = "Test Header"
+  // $scope.title = "Test Header"
+});
+
+app.controller("WelcomeCtrl", function($rootScope, $scope, $http, $location, $state) {
+  $scope.formData = {};
+  $scope.title = "Welcome"
 });
 
 app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $state) {
