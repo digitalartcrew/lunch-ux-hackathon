@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var User = require("./user");
 
 var childSchema = new mongoose.Schema({
 	firstname: String,
@@ -9,7 +10,11 @@ var childSchema = new mongoose.Schema({
 	race: String,
 	type: String,
 	income: Number,
-	frequency: String
+	frequency: String,
+	user: {
+  	type: mongoose.Schema.Types.ObjectId,
+  	ref: "User"
+  }
 });
 
 module.exports = mongoose.model("Child", childSchema);

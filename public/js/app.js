@@ -72,7 +72,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.adultsInHousehold1', {
     url: '/adultsInHousehold1',
-    templateUrl: 'views/form-adultsInHousehold1.html'
+    templateUrl: 'views/form-adultsInHousehold1.html',
+    controller: 'AdultsController'
   })
 
   .state('form.adultsInHousehold2', {

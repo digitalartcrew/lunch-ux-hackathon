@@ -1,11 +1,21 @@
 // load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var Adult = require('./adult');
+var Child = require('./child');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
   username: String,
-  password: String
+  password: String,
+  adults: [{
+  	type: mongoose.Schema.Types.ObjectId,
+  	ref: "Adult"
+  }],
+  children: [{
+  	type: mongoose.Schema.Types.ObjectId,
+  	ref: "Child"
+  }]
 });
 
 // methods ======================
