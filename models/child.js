@@ -7,7 +7,9 @@ var childSchema = new mongoose.Schema({
 	student: Boolean,
 	ethnicity: String,
 	race: String,
-	type: String
+	type: String,
+	income: Number,
+	frequency: String
 });
 
 module.exports = mongoose.model("Child", childSchema);

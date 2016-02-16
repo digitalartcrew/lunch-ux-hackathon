@@ -1,13 +1,24 @@
-<h1>Children in Household 1</h1>
+<center>
+<p>No child household members currently added yet!</p>
+<p>The following children have been added to the household</p>
 
-No child household members currently added yet!
-￼+ Add a child household member
+<div class="col-md-10-offset-1">
+<ul>
+  <li ng-repeat="child in children">
+    <p><a ng-href="/childs/{{child._id}}/">{{child.address}}</a> {{child.city}} {{child.state}} {{child.zip}}</p>
+     <button ng-click="deleteChild(child)">Delete</button>
+    <a ng-href="/children/{{child._id}}/edit"><button>Edit {{child.address}}</button></a>
+  </li>
+</ul>
+
+<a ui-sref="form.child-new"><button>Add Child</button></a>
+</center>
 
 <div class="form-group row">
 <div class="inline-block">
     <div class="clearfix"> 
       <div class="btn-group inline pull-right" data-toggle="buttons-checkbox">
-        <a ui-sref="form.childStatus2" class="btn btn-info">
+        <a href="form.childStatus2" class="btn btn-info">
       <span class="glyphicon glyphicon glyphicon-backward"></span>
       Back
       </a>
@@ -15,7 +26,7 @@ No child household members currently added yet!
       <a ui-sref="#" class="btn btn-info">
       Save<span class="glyphicon glyphicon glyphicon-save"></span>
       </a>
-      <a ui-sref="form.childrenInHousehold2" class="btn btn-info">
+      <a ui-sref="form.adultsInHousehold1" class="btn btn-info">
       Continue<span class="glyphicon glyphicon-forward"></span>
       </a>
     </div>

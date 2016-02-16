@@ -115,7 +115,7 @@ app.controller("EditAdultController", function($scope, $location, $routeParams, 
 });
 
 
-app.controller("ChildsController", function($scope, $location, childService){
+app.controller("ChildsController", function($scope, $location, ChildService){
 
   $scope.children = ChildService.query();
 
@@ -126,7 +126,7 @@ app.controller("ChildsController", function($scope, $location, childService){
   };
 });
 
-app.controller("NewChildController", function($scope, $location, childService){
+app.controller("NewChildController", function($scope, $location, ChildService){
   $scope.createChild = function(child){
     childService.save(child, function(){
       $location.path('/');
@@ -134,7 +134,7 @@ app.controller("NewChildController", function($scope, $location, childService){
   };
 });
 
-app.controller("ChildController", function($scope, $location, $routeParams, childService){
+app.controller("ChildController", function($scope, $location, $routeParams, ChildService){
   childService.get({id: $routeParams.id}, function(child){
     $scope.child = child;
   }, function(err){
@@ -143,7 +143,7 @@ app.controller("ChildController", function($scope, $location, $routeParams, chil
 });
 
 
-app.controller("EditChildController", function($scope, $location, $routeParams, childService){
+app.controller("EditChildController", function($scope, $location, $routeParams, ChildService){
   childService.get({id: $routeParams.id},function(child){
     $scope.child = child;
   }, function(err){

@@ -69,26 +69,6 @@ app.config(function($stateProvider,$urlRouterProvider) {
     templateUrl: 'views/form-childrenInHousehold1.html'
   })
 
-  .state('form.childrenInHousehold2', {
-    url: '/childrenInHousehold2',
-    templateUrl: 'views/form-childrenInHousehold2.html'
-  })
-
-  .state('form.childrenInHousehold3', {
-    url: '/childrenInHousehold3',
-    templateUrl: 'views/form-childrenInHousehold3.html'
-  })
-
-  .state('form.childrenInHousehold4', {
-    url: '/childrenInHousehold4',
-    templateUrl: 'views/form-childrenInHousehold4.html'
-  })
-
-  .state('form.childrenInHousehold5', {
-    url: '/childrenInHousehold5',
-    templateUrl: 'views/form-childrenInHousehold5.html'
-  })
-
   .state('form.adultsInHousehold1', {
     url: '/adultsInHousehold1',
     templateUrl: 'views/form-adultsInHousehold1.html'
@@ -160,42 +140,50 @@ app.config(function($stateProvider,$urlRouterProvider) {
     templateUrl: 'views/form-review.html'
   })
 
-  .state('/adults', {
+  .state('form.adults', {
+    url: '/adults',
     controller: "AdultsController",
     templateUrl: "views/form-adultContactInfo1.html"
   })
 
-  .state('/adults/new', {
+  .state('form.adults-new', {
+    url: '/adults/new',
     controller: "NewAdultController",
     templateUrl: "views/a-new.html"
   })
 
-  .state('/adults/:id', {
+  .state('form.adults-single', {
+    url: '/adults/:id',
     controller: "AdultController",
     templateUrl: "views/a-show.html"
   })
 
-  .state('/adults/:id/edit', {
+  .state('form.adults-edit', {
+    url: '/adults/:id/edit',
     controller: "EditAdultController",
     templateUrl: "views/a-edit.html"
   })
 
-    .state('/children', {
+  .state('form.children', {
+    url: '/children',
     controller: "ChildsController",
     templateUrl: "views/form-ChildContactInfo1.html"
   })
 
-  .state('/children/new', {
+  .state('form.child-new', {
+    url: '/children/new',
     controller: "NewChildController",
     templateUrl: "views/c-new.html"
   })
 
-  .state('/children/:id', {
+  .state('form.child-single', {
+    url: '/children/:id',
     controller: "ChildController",
     templateUrl: "views/c-show.html"
   })
 
-  .state('/children/:id/edit', {
+  .state('form.child-edit', {
+    url: '/children/:id/edit',
     controller: "EditChildController",
     templateUrl: "views/c-edit.html"
   })
