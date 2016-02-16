@@ -39,6 +39,7 @@ app.controller("SignUpCtrl", function($scope, $http, $rootScope, $location, $sta
   $scope.signup = function(user) {
 
     if (user.password == user.password2) {
+      console.log('Almost there!')
       $http.post('/signup', user)
         .success(function(user) {
           $rootScope.currentUser = user;

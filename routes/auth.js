@@ -31,6 +31,7 @@ module.exports = function(app, passport) {
         } else {
           var newUser = new db.User();
           newUser.username = req.body.username.toLowerCase();
+          console.log('We are here!')
           newUser.password = newUser.generateHash(req.body.password);
           newUser.save(function(err, user) {
             req.login(user, function(err) {
@@ -44,87 +45,88 @@ module.exports = function(app, passport) {
       });
     });
 
-    //Index GET /api/adults/
+//     //Index GET /api/adults/
 
-    app.get('/', function(req,res){
-      db.Adult.find({}, function(err,adults){
-        res.status(200).send(adults);
-      });
-    });
+//     app.get('/', function(req,res){
+//       db.Adult.find({}, function(err,adults){
+//         res.status(200).send(adults);
+//       });
+//     });
 
-//Create POST /api/adults/
+// //Create POST /api/adults/
 
-    app.post('/', function(req,res){
-    db.Adult.create(req.body,function(err,adult){
-      res.status(201).send(adult);
-    });
-    });
+//     app.post('/', function(req,res){
+//     db.Adult.create(req.body,function(err,adult){
+//       res.status(201).send(adult);
+//     });
+//     });
 
-//Get SHOW /api/adults/:id
+// //Get SHOW /api/adults/:id
 
-  app.get('/:id', function(req,res){
-    db.Adult.findById(req.params.id, function(err,adult){
-      res.status(200).send(adult);
-    });
-  });
+//   app.get('/:id', function(req,res){
+//     db.Adult.findById(req.params.id, function(err,adult){
+//       res.status(200).send(adult);
+//     });
+//   });
 
-//Update PUT /api/adults/:id
+// //Update PUT /api/adults/:id
 
-  app.put('/:id',function(req,res){
-    db.Adult.findByIdAndUpdate(req.params.id,req.body, function(err,adult){
-     if (err) res.status(500).send({error: "Double check for error"});
-     res.status(201).send(adult);
-   });
-  });
+//   app.put('/:id',function(req,res){
+//     db.Adult.findByIdAndUpdate(req.params.id,req.body, function(err,adult){
+//      if (err) res.status(500).send({error: "Double check for error"});
+//      res.status(201).send(adult);
+//    });
+//   });
 
-//Delete 
+// //Delete 
 
-app.delete('/:id', function(req,res){
-  db.Adult.findByIdAndRemove(req.params.id, function(err,adult){
-    res.status(200).send(adult);
-  });
-});
+// app.delete('/:id', function(req,res){
+//   db.Adult.findByIdAndRemove(req.params.id, function(err,adult){
+//     res.status(200).send(adult);
+//   });
+// });
 
-//Index GET /api/childs/
+// //Index GET /api/childs/
 
-app.get('/', function(req,res){
-  db.Child.find({}, function(err,children){
-    res.status(200).send(childs);
-  });
-});
+// app.get('/', function(req,res){
+//   db.Child.find({}, function(err,children){
+//     res.status(200).send(childs);
+//   });
+// });
 
-//Create POST /api/childs/
+// //Create POST /api/childs/
 
-app.post('/', function(req,res){
-  db.Child.create(req.body,function(err,children){
-    res.status(201).send(child);
-  });
-});
+// app.post('/', function(req,res){
+//   db.Child.create(req.body,function(err,children){
+//     res.status(201).send(child);
+//   });
+// });
 
-//Get SHOW /api/childs/:id
+// //Get SHOW /api/childs/:id
 
-app.get('/:id', function(req,res){
-  db.Child.findById(req.params.id, function(err,children){
-    res.status(200).send(child);
-  });
-});
+// app.get('/:id', function(req,res){
+//   db.Child.findById(req.params.id, function(err,children){
+//     res.status(200).send(child);
+//   });
+// });
 
-//Update PUT /api/childs/:id
+// //Update PUT /api/childs/:id
 
-app.put('/:id',function(req,res){
-  db.Child.findByIdAndUpdate(req.params.id,req.body, function(err,child){
-   if (err) res.status(500).send({error: "Double check for error"});
-   res.status(201).send(child);
- });
-});
+// app.put('/:id',function(req,res){
+//   db.Child.findByIdAndUpdate(req.params.id,req.body, function(err,child){
+//    if (err) res.status(500).send({error: "Double check for error"});
+//    res.status(201).send(child);
+//  });
+// });
 
-//Delete 
+// //Delete 
 
-app.delete('/:id', function(req,res){
-  db.Child.findByIdAndRemove(req.params.id, function(err,child){
-    res.status(200).send(child);
-  });
-});
-
-
+// app.delete('/:id', function(req,res){
+//   db.Child.findByIdAndRemove(req.params.id, function(err,child){
+//     res.status(200).send(child);
+//   });
+// });
 };
+
+
+

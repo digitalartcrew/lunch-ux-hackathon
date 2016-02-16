@@ -1,4 +1,4 @@
-var app = angular.module("LunchApp", ["ngVidBg", "ngAnimate","ui.router"]);
+var app = angular.module("LunchApp", ["ngVidBg", "ngAnimate","ui.router",'ngResource']);
 
 app.config(function($stateProvider,$urlRouterProvider) {
   

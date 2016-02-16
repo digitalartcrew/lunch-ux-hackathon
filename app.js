@@ -1,6 +1,12 @@
 //Express
 var express = require('express');
-var app = express();
+		 	app = express();
+		 	methodOverride = require('method-override'),
+			morgan = require("morgan"),
+			adultRoutes = require("./routes/adults"),
+			childRoutes = require("./routes/children"),
+			path = require("path");
+
 app.use(express.static(__dirname + '/public'));
 
 //Passport
@@ -25,6 +31,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
+// use morgan
+app.use(morgan("tiny"));
+// use method-override
+app.use(methodOverride('_method'));
+
+app.use('/api/adults', adultRoutes);
+app.use('/api/children', childRoutes);
 
 //Routes
 require('./routes/auth.js')(app,passport); //load our routes and full configured passport
