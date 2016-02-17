@@ -5,7 +5,7 @@ var db = require("../models");
 //Index GET /api/childs/
 
 router.get('/', function(req,res){
-	db.Child.find({}, function(err,children){
+	db.Child.find({user:req.user._id}, function(err,children){
 		res.status(200).send(children);
 	});
 });
@@ -14,6 +14,8 @@ router.get('/', function(req,res){
 
 router.post('/', function(req,res){
 	db.Child.create(req.body,function(err,child){
+		child.user = req.user._id;  
+		child.save();
 		res.status(201).send(child);
 	});
 });

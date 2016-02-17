@@ -6,6 +6,7 @@ module.exports = function(app, passport) {
     // process the login form
     app.post("/login", passport.authenticate('local-login'), function(req, res) {
       res.json(req.user);
+      console.log("Inside Auth JS USER:",req.user)
     });
 
     // handle logout
