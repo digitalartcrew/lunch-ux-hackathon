@@ -11,17 +11,37 @@
       <div class="panel-heading">CHILDREN IN HOUSEHOLD</div>
       <div class="panel-body">
 <center>
-<p>No child household members currently added yet!</p>
+<p ng-hide="children">No child household members currently added yet!</p>
 <p>The following children have been added to the household</p>
-
 <div class="col-md-10-offset-1">
-<ul>
-  <li ng-repeat="child in children">
-    <p><a ng-href="/childs/{{child._id}}/">{{child.address}}</a> {{child.city}} {{child.state}} {{child.zip}}</p>
-     <button ng-click="deleteChild(child)">Delete</button>
-    <a ng-href="/children/{{child._id}}/edit"><button>Edit {{child.address}}</button></a>
-  </li>
-</ul>
+<table style="width:100%">
+  <tr>
+    <th>NAME OF CHILD</th>
+    <th>STUDENT?</th>    
+    <th>FREQUENCY</th>
+    <th>AGE</th>
+    <th>ETHNICITY</th>
+    <th>STATUS</th>
+  </tr>
+  <tr ng-repeat="child in children">
+    <td>{{child.firstname}} {{child.lastname}}</td>
+    <td>{{child.student}}</td>    
+    <td>{{child.frequency}}</td>
+    <td>{{child.age}}</td>
+    <td>{{child.ethnicity}}</td>
+    <td>{{child.status}}</td>
+    <td><a ui-sref="form.child-edit"><button>Edit</button></a></td>
+    <td><button ng-click="deleteChild(child)">Delete</button></td>
+  </tr>
+ 
+</table>
+</div>
+
+
+
+
+
+
 
 <a ui-sref="form.child-new"><button>Add Child</button></a>
 </center>

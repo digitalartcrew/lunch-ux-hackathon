@@ -67,7 +67,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.childrenInHousehold1', {
     url: '/childrenInHousehold1',
-    templateUrl: 'views/form-childrenInHousehold1.html'
+    templateUrl: 'views/form-childrenInHousehold1.html',
+    controller: 'ChildrenController'
   })
 
   .state('form.adultsInHousehold1', {
@@ -93,7 +94,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.income1', {
     url: '/income1',
-    templateUrl: 'views/form-income1.html'
+    templateUrl: 'views/form-income1.html',
+    controller: 'ChildrenController'
   })
 
   .state('form.income2', {
@@ -103,7 +105,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.income3', {
     url: '/income3',
-    templateUrl: 'views/form-income3.html'
+    templateUrl: 'views/form-income3.html',
+    controller: "AdultsController"
   })
 
   .state('form.income4', {
@@ -168,7 +171,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.children', {
     url: '/children',
-    controller: "ChildsController",
+    controller: "ChildrenController",
     templateUrl: "views/form-ChildContactInfo1.html"
   })
 
@@ -189,7 +192,6 @@ app.config(function($stateProvider,$urlRouterProvider) {
     controller: "EditChildController",
     templateUrl: "views/c-edit.html"
   })
-
 
   $urlRouterProvider.otherwise('login');
   });

@@ -26,7 +26,7 @@
     <br>
     <div class="form-group spacing firstRow">
       	<label for="age">Age</label><br>
-	<select class="form-control" name="age">
+	<select class="form-control" ng-model="child.age" name="age">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -49,7 +49,7 @@
     </div>
     <div class="form-group spacing">
       <label for="student">Student</label><br>
-	<select class="form-control" name="student">
+	<select ng-model="child.student" class="form-control" name="student">
 	<option value="yes">Yes</option>
         <option value="no">No</option>
 	</select>

@@ -11,18 +11,25 @@
       <div class="panel-heading">ADULTS IN HOUSEHOLD</div>
       <div class="panel-body">
 <center>
-<p>No adult household members currently added yet!</p>
-<p>The following adultren have been added to the household</p>
+<p ng-hide="adults">No adult household members currently added yet!</p>
+<p>The following adults have been added to the household</p>
+
 
 <div class="col-md-10-offset-1">
-<ul>
-  <li ng-repeat="adult in adults">
-{{adult}} <!-- {{adult.lastname}} -->
-    <!-- <p><a ng-href="/adults/{{adult._id}}/">{{adult.address}}</a> {{adult.city}} {{adult.state}} {{adult.zip}}</p>
-     <button ng-click="deleteAdult(adult)">Delete</button>
-    <a ng-href="/adultren/{{adult._id}}/edit"><button>Edit</button></a> -->
-  </li>
-</ul>
+<table style="width:100%">
+  <tr>
+    <th>NAMES OF ADULTS</th>
+    <th></th>    
+    <th></th>
+  </tr>
+  <tr ng-repeat="adult in adults">
+    <td>{{adult.firstname}} {{adult.lastname}}</td>
+    <td><a ui-sref="form.adults-edit"><button>Edit</button></a></td>
+    <td><button ng-click="deleteAdult(adult)">Delete</button></td>
+  </tr>
+ 
+</table>
+</div>
 
 <a ui-sref="form.adults-new"><button>Add Adult</button></a>
 </center>

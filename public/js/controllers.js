@@ -118,10 +118,8 @@ app.controller("EditAdultController", function($scope, $location, $routeParams, 
 });
 
 
-app.controller("ChildsController", function($scope, $location, ChildService, $state){
-
+app.controller("ChildrenController", function($scope, $location, ChildService, $state){
   $scope.children = ChildService.query();
-
   $scope.deleteChild = function(child){
     child.$delete(function(child){
       $scope.children.splice($scope.children.indexOf(child),1);
@@ -141,7 +139,7 @@ app.controller("ChildController", function($scope, $location, $routeParams, Chil
   ChildService.get({id: $routeParams.id}, function(child){
     $scope.child = child;
   }, function(err){
-    $state.go('form.childrenInHousehold1');
+    $location.path('/');
   });
 });
 

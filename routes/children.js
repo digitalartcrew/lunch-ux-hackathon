@@ -6,7 +6,7 @@ var db = require("../models");
 
 router.get('/', function(req,res){
 	db.Child.find({}, function(err,children){
-		res.status(200).send(childs);
+		res.status(200).send(children);
 	});
 });
 

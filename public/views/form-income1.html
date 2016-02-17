@@ -13,34 +13,22 @@
 <h3>Child Income</h3>
 <p>Sometimes a child in the household can earn an income. If any children in the household earn income, please report the TOTAL income earned by all children in the household</p>
 
+<div class="col-md-10-offset-1">
 <table style="width:100%">
   <tr>
     <th>CHILDREN IN HOUSEHOLD</th>
-    <th>TOTAL INCOME REPORTED FOR ALL CHILDREN IN HOUSEHOLD</th>		
+    <th>TOTAL INCOME REPORTED FOR ALL CHILDREN IN HOUSEHOLD</th>    
     <th>FREQUENCY</th>
   </tr>
-  <tr>
-    <td>Jill Eve</td>
-    <td>500</td>		
+  <tr ng-repeat="child in children">
+    <td>{{child.firstname}} {{child.lastname}}</td>
+    <td>500</td>    
     <td>Weekly</td>
-    <td>Edit</td>
-    <td>Remove</td>
+    <td><a ui-sref="form.income3"><button>Report Income</button></a></td>
   </tr>
-  <tr>
-    <td>Jackson Smith</td>
-    <td>1250</td>		
-    <td>Bi-Weekly</td>
-     <td>Edit</td>
-    <td>Remove</td>
-  </tr>
-  <tr>
-    <td>John Do</td>
-    <td>4500</td>		
-    <td>Monthly</td>
-     <td>Edit</td>
-    <td>Remove</td>
-  </tr>
+ 
 </table>
+</div>
 
 <div class="form-group row">
 <div class="inline-block">
@@ -54,7 +42,7 @@
 			<a ui-sref="#" class="btn btn-info">
 			Save<span class="glyphicon glyphicon glyphicon-save"></span>
 			</a>
-			<a ui-sref="form.income2" class="btn btn-info">
+			<a ui-sref="form.income3" class="btn btn-info">
 			Continue<span class="glyphicon glyphicon-forward"></span>
 			</a>
 		</div>
