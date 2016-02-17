@@ -78,6 +78,13 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
 });
 
 app.controller("AdultsController", function($scope, $location, AdultService, $state){
+   $scope.createAdult = function(adult){
+    AdultService.save(adult, function(){
+      $state.go('form.adultsInHousehold1');
+    });
+  };
+
+  
   $scope.adults = AdultService.query();
   $scope.deleteAdult = function(adult){
     adult.$delete(function(adult){
