@@ -83,12 +83,18 @@ app.controller("AdultsController", function($scope, $location, AdultService, $st
       $state.go('form.adultsInHousehold1');
     });
   };
-
-  
   $scope.adults = AdultService.query();
   $scope.deleteAdult = function(adult){
     adult.$delete(function(adult){
       $scope.adults.splice($scope.adults.indexOf(adult),1);
+    });
+  };
+});
+
+app.controller("MainAdultController", function($scope, $location, AdultService, $state){
+  $scope.createAdult = function(adult){
+    AdultService.save(adult, function(){
+      $state.go('form.adultContactInfo2');
     });
   };
 });

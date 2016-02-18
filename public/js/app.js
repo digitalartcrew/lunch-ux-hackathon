@@ -39,7 +39,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.adultContactInfo1', {
     url: '/adultContactInfo1',
     templateUrl: 'views/form-adultContactInfo1.html',
-    controller: "AdultsController"
+    controller: "MainAdultController"
   })
 
   .state('form.adultContactInfo2', {
@@ -148,11 +148,11 @@ app.config(function($stateProvider,$urlRouterProvider) {
     controller: "ReviewController"
   })
 
-  .state('form.adults', {
-    url: '/adults',
-    controller: "AdultsController",
-    templateUrl: "views/form-adultContactInfo1.html"
-  })
+  // .state('form.adults', {
+  //   url: '/adults',
+  //   controller: "MainAdultController",
+  //   templateUrl: "views/form-adultContactInfo1.html"
+  // })
 
   .state('form.adults-new', {
     url: '/adults/new',
