@@ -99,6 +99,20 @@ app.controller("MainAdultController", function($scope, $location, AdultService, 
   };
 });
 
+app.controller("AssistCtrl", function($scope, $location, $state){
+    $scope.benefit1 = false;
+    $scope.benefit2 = false;
+    $scope.benefit3 = false;
+
+    $scope.hasBenefits = function(benefit){
+      if($scope.benefit1 || $scope.benefit2 || $scope.benefit3){
+        $state.go('form.childrenInHousehold1');
+      }else{
+        $state.go('form.childStatus1');
+      }
+    } 
+});
+
 
 
 app.controller("NewAdultController", function($scope, $location, AdultService, $state){

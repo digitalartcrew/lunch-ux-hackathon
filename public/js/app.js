@@ -49,7 +49,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.assistanceProgram1', {
     url: '/assistanceProgram1',
-    templateUrl: 'views/form-assistanceProgram1.html'
+    templateUrl: 'views/form-assistanceProgram1.html',
+    controller: 'AssistCtrl'
   })
 
   .state('form.assistanceProgram2', {
