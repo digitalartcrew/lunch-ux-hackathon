@@ -24,6 +24,12 @@
       <input type="date" class="form-control" id="date">
     </div>
 </div>
+<h2>Signature Test</h2>
+<div ng-controller="SignatureController">
+    <div>items length: {{items.length}}</div>
+    <img ng-src="{{hash}}" alt="signature image" />
+    <j-signature-directive sig="customSignature" save="testAction" bg-color="#00f" color="#ffcc00"></j-signature-directive>
+</div>
 
 <div class="form-group row">
 
