@@ -36,33 +36,16 @@
         </label>
     </div>
 </div>
-  <!-- <input type="submit" value="Submit"> -->
+
 
 
 <h5>Please enter the case number of just ONE of your assistance program benefits.</h5>
 
-<!-- <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">case number</span>
-  <input type="text" class="form-control" placeholder="Case Number" aria-describedby="basic-addon1" name="casenumber">
-</div> -->
 
 <div class="form-group spacing" id="daytime">
   <label for="phone">CASE NUMBER</label>
-  <input type="phone" class="form-control" id="caseNumber">
+  <input type="phone" ng-model="casenumber" class="form-control" id="caseNumber">
 </div>
-<!-- <div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
-<div class="checkbox disabled">
-  <label>
-    <input type="checkbox" value="">
-    Option two is disabled
-  </label>
-</div> -->
-
 
 <div class="form-group row">
 <div class="inline-block">
@@ -73,10 +56,6 @@
       <span class="glyphicon glyphicon glyphicon-backward"></span>
       Back
       </a>
-
-     <!--  <a ui-sref="#" class="btn btn-info">
-      Save<span class="glyphicon glyphicon glyphicon-save"></span>
-      </a> -->
       <button class="btn btn-info" ng-click="hasBenefits(benefit)">
                    Continue<span class="glyphicon glyphicon-forward"></span> 
                  </button>

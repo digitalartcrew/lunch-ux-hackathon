@@ -103,10 +103,12 @@ app.controller("AssistCtrl", function($scope, $location, $state){
     $scope.benefit1 = false;
     $scope.benefit2 = false;
     $scope.benefit3 = false;
+    $scope.casenumber;
 
     $scope.hasBenefits = function(benefit){
       if($scope.benefit1 || $scope.benefit2 || $scope.benefit3){
         $state.go('form.childrenInHousehold1');
+        console.log($scope.casenumber)
       }else{
         $state.go('form.childStatus1');
       }
