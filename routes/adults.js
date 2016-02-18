@@ -16,7 +16,6 @@ router.get('/', function(req,res){
 router.post('/', function(req,res){
 	// console.log("IN REQ..USER:\n\n\n\n\n\n",req.user) 
 	db.Adult.create(req.body,function(err,adult){
-
 		adult.user = req.user._id;  
 		adult.save();
 		console.log("THE NEW ADULT:", adult);

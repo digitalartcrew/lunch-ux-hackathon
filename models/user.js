@@ -8,15 +8,6 @@ var Child = require('./child');
 var userSchema = mongoose.Schema({
   username: String,
   password: String,
-  firstname: String,
-  lastname: String,
-  address: String,
-  apt: String,
-  city: String,
-  state: String,
-  zip: Number,
-  phone: String,
-  email: String,
   adults: [{
   	type: mongoose.Schema.Types.ObjectId,
   	ref: "Adult"

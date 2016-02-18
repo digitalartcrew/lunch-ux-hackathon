@@ -93,6 +93,8 @@ app.controller("AdultsController", function($scope, $location, AdultService, $st
   };
 });
 
+
+
 app.controller("NewAdultController", function($scope, $location, AdultService, $state){
   $scope.createAdult = function(adult){
     AdultService.save(adult, function(){
@@ -163,6 +165,11 @@ app.controller("EditChildController", function($scope, $location, $routeParams, 
       $state.go('form.childrenInHousehold1');
     });
   };
+});
+
+app.controller("ReviewController", function($scope, $location, AdultService, ChildService, $state){
+  $scope.adults = AdultService.query();
+  $scope.children = ChildService.query();
 });
 
 //SIG CONTROLLER

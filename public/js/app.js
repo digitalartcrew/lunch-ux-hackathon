@@ -23,6 +23,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
       logincheck: checkLoggedin
     }
   })
+  
   .state('form.welcome', {
     url: '/welcome',
     templateUrl: 'views/form-welcome.html',
@@ -143,7 +144,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.review', {
     url: '/review',
-    templateUrl: 'views/form-review.html'
+    templateUrl: 'views/form-review.html',
+    controller: "ReviewController"
   })
 
   .state('form.adults', {

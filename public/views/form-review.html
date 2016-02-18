@@ -12,6 +12,48 @@
       <div class="panel-body">
 <h1>Review</h1>
 
+<div class="col-md-10-offset-1">
+<table style="width:100%">
+  <tr>
+    <th>NAMES OF ADULTS</th>
+    <th></th>    
+    <th></th>
+  </tr>
+  <tr ng-repeat="adult in adults">
+    <td>{{adult.firstname}} {{adult.lastname}}</td>
+    <td>{{adult.address}} {{adult.apt}}</td>
+    <td>{{adult.city}} {{adult.state}}</td>
+    <td>{{adult.phone}} {{adult.email}}</td>
+    <td><a ui-sref="form.adults-edit"><button>Edit</button></a></td>
+    <td><button ng-click="deleteAdult(adult)">Delete</button></td>
+  </tr>
+ 
+</table>
+</div>
+
+<div class="col-md-10-offset-1">
+<table style="width:100%">
+  <tr>
+    <th>NAME OF CHILD</th>
+    <th>STUDENT?</th>    
+    <th>FREQUENCY</th>
+    <th>AGE</th>
+    <th>ETHNICITY</th>
+    <th>STATUS</th>
+  </tr>
+  <tr ng-repeat="child in children">
+    <td>{{child.firstname}} {{child.lastname}}</td>
+    <td>{{child.student}}</td>    
+    <td>{{child.frequency}}</td>
+    <td>{{child.age}}</td>
+    <td>{{child.ethnicity}}</td>
+    <td>{{child.status}}</td>
+    <td><a ui-sref="form.child-edit"><button>Edit</button></a></td>
+    <td><button ng-click="deleteChild(child)">Delete</button></td>
+  </tr>
+ 
+</table>
+
 <div class="form-group row">
 <div class="inline-block">
   	<div class="clearfix"> 
