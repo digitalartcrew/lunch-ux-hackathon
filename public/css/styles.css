@@ -114,9 +114,11 @@
 }
 
 #progressHeader li{
-margin-left: -45px;
-left: 250px;
+  margin-left: -45px;
+  left: 250px;
 }
+
+
 
 #progressHeader a{ 
   color:#FFF; 
@@ -138,6 +140,18 @@ left: 250px;
   padding-top:5px; 
   width:30px; 
   border-radius:50%; 
+}
+
+#progressHeader a.active span{
+  background: red;
+}
+
+#progressHeader li .navCircle{
+  height:15px; 
+  width:15px; 
+  margin:39px auto 10px; 
+  /*padding-top:5px; */
+  
 }
 
 #usernameNav{
@@ -295,3 +309,5 @@ input[type=checkbox] {
   height: 450px;
   overflow-y: scroll;
 }
+
+
