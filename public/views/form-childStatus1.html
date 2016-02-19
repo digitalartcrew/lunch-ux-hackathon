@@ -22,46 +22,46 @@ Do any of the children in the household have the following statuses?
   <h5 class="csLabel">Foster Child</h5>
   <div class="csLabel pull-right">
     <label class="radio-inline">
-      <input name="radioGroup" id="fc1" value="all" type="radio"> 
+      <input ng-model="fosterchild" name="radioGroup" id="fc1" value="all" type="radio"> 
     </label>
     <label class="radio-inline">
-      <input name="radioGroup" id="fc2" value="some" checked="" type="radio"> 
+      <input ng-model="fosterchildsome" name="radioGroup" id="fc2" value="some" checked="" type="radio"> 
     </label>
   </div><br>
   <h5 class="csLabel">Runaway</h5>
   <div class="csLabel pull-right">
     <label class="radio-inline">
-      <input name="radioGroup" id="r1" value="all" type="radio"> 
+      <input ng-model="runaway" name="radioGroup" id="r1" value="all" type="radio"> 
     </label>
     <label class="radio-inline">
-      <input name="radioGroup" id="r2" value="some" checked="" type="radio"> 
+      <input ng-model="runawaysome" name="radioGroup" id="r2" value="some" checked="" type="radio"> 
     </label>
   </div><br>
   <h5 class="csLabel">Homeless</h5>
   <div class="csLabel pull-right">
     <label class="radio-inline">
-      <input name="radioGroup" id="h1" value="all" type="radio"> 
+      <input ng-model="homeless" name="radioGroup" id="h1" value="all" type="radio"> 
     </label>
     <label class="radio-inline">
-      <input name="radioGroup" id="h2" value="some" checked="" type="radio"> 
+      <input ng-model="homelesssome" name="radioGroup" id="h2" value="some" checked="" type="radio"> 
     </label>
   </div><br>
   <h5 class="csLabel">Head Start</h5>
   <div class="csLabel pull-right">
     <label class="radio-inline">
-      <input name="radioGroup" id="hs1" value="all" type="radio"> 
+      <input ng-model="headstart" name="radioGroup" id="hs1" value="all" type="radio"> 
     </label>
     <label class="radio-inline">
-      <input name="radioGroup" id="hs2" value="some" checked="" type="radio"> 
+      <input ng-model="headstartsome" name="radioGroup" id="hs2" value="some" checked="" type="radio"> 
     </label>
   </div><br>
   <h5 class="csLabel">Migrant</h5>
   <div class="csLabel pull-right">
     <label class="radio-inline">
-      <input name="radioGroup" id="m1" value="all" type="radio"> 
+      <input ng-model="migrant" name="radioGroup" id="m1" value="all" type="radio"> 
     </label>
     <label class="radio-inline">
-      <input name="radioGroup" id="m2" value="some" checked="" type="radio"> 
+      <input ng-model="migrantsome" name="radioGroup" id="m2" value="some" checked="" type="radio"> 
     </label>
   </div>
 </div>
@@ -102,9 +102,9 @@ Do any of the children in the household have the following statuses?
       <a ui-sref="#" class="btn btn-info">
       Save<span class="glyphicon glyphicon glyphicon-save"></span>
       </a>
-      <a ui-sref="form.childStatus2" class="btn btn-info">
-      Continue<span class="glyphicon glyphicon-forward"></span>
-      </a>
+         <button class="btn btn-info" ng-click="childStatus()">
+                   Continue<span class="glyphicon glyphicon-forward"></span> 
+                 </button>
     </div>
   </div>
   </div>

@@ -60,7 +60,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.childStatus1', {
     url: '/childStatus1',
-    templateUrl: 'views/form-childStatus1.html'
+    templateUrl: 'views/form-childStatus1.html',
+    controller: 'ChildStatusController'
   })
 
   .state('form.childStatus2', {

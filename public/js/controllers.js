@@ -159,7 +159,11 @@ app.controller("ChildrenController", function($scope, $location, ChildService, $
 });
 
 app.controller("NewChildController", function($scope, $location, ChildService, $state){
+  // $scope.formatter = function (value) {
+  //     return (value === true) ? 'Yes' : ((value === false) ? 'No' : '');
+  //   };
   $scope.createChild = function(child){
+    // $scope.formatter();
     ChildService.save(child, function(){
       $state.go('form.childrenInHousehold1');
     });
@@ -192,6 +196,19 @@ app.controller("EditChildController", function($scope, $location, $routeParams, 
 app.controller("ReviewController", function($scope, $location, AdultService, ChildService, $state){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
+});
+
+
+app.controller("ChildStatusController", function($scope, $location, $state){
+  $scope.childStatus = function(){
+    if ($scope.fosterchild || $scope.runaway || $scope.homeless || $scope.headstart){
+      $state.go('form.childrenInHousehold1');
+    }else if ($scope.fosterchildsome || $scope.runawaysome || $scope.homelesssome || $scope.headstartsome){
+      $state.go('form.childrenInHousehold1');
+    }else{
+      $state.go('form.childrenInHousehold1');
+    }
+  }
 });
 
 //SIG CONTROLLER

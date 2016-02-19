@@ -50,8 +50,8 @@
     <div class="form-group spacing">
       <label for="student">Student</label><br>
 	<select ng-model="child.student" class="form-control" name="student">
-	<option value="yes">Yes</option>
-        <option value="no">No</option>
+	<option value="yes" name="Yes">Yes</option>
+        <option value="no" name="No">No</option>
 	</select>
     </div><br><br>
     <div class="row">
@@ -74,13 +74,13 @@
 	</div>
     </div>
 
-        <div class="col-md-3 form-group spacing firstRow">
+        <div ng-model="child.ethnicity" class="col-md-3 form-group spacing firstRow">
       <label for="ethnicity">Ethnicity (Optional)</label><br>
 	<div class="checkbox">
-	<label><input type="checkbox" value="">Hispanic or Latino</label>
+	<label><input type="checkbox" value="H\L">Hispanic or Latino</label>
 	</div>
 	<div class="checkbox">
-	<label><input type="checkbox" value="">Not Hispanic or</label>
+	<label><input type="checkbox" value="Not H\L">Not Hispanic or Latino</label>
 	</div>
     </div>
 

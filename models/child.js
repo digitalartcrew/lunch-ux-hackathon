@@ -5,7 +5,7 @@ var childSchema = new mongoose.Schema({
 	firstname: String,
 	lastname: String,
 	age: Number,
-	student: Boolean,
+	student: String,
 	ethnicity: String,
 	race: String,
 	type: String,
