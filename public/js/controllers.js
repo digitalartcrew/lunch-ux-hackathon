@@ -159,13 +159,15 @@ app.controller("ChildrenController", function($scope, $location, ChildService, $
 });
 
 app.controller("NewChildController", function($scope, $location, ChildService, $state){
-  // $scope.formatter = function (value) {
-  //     return (value === true) ? 'Yes' : ((value === false) ? 'No' : '');
-  //   };
   $scope.createChild = function(child){
-    // $scope.formatter();
     ChildService.save(child, function(){
       $state.go('form.childrenInHousehold1');
+    });
+  };
+
+  $scope.createChild2 = function(child){
+    ChildService.save(child, function(){
+      $state.go('form.childrenInHousehold1Skip');
     });
   };
 });
@@ -202,7 +204,7 @@ app.controller("ReviewController", function($scope, $location, AdultService, Chi
 app.controller("ChildStatusController", function($scope, $location, $state){
   $scope.childStatus = function(){
     if ($scope.fosterchild || $scope.runaway || $scope.homeless || $scope.headstart){
-      $state.go('form.childrenInHousehold1');
+      $state.go('form.childrenInHousehold1Skip');
     }else if ($scope.fosterchildsome || $scope.runawaysome || $scope.homelesssome || $scope.headstartsome){
       $state.go('form.childrenInHousehold1');
     }else{
