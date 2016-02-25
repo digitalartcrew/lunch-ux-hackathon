@@ -238,6 +238,10 @@
   display: inline-block;
 }
 
+/*.spacing .invalid{
+  color: red;
+}*/
+
 .firstRow{
   width: 300px;
   margin-right: 20px;
@@ -310,4 +314,49 @@ input[type=checkbox] {
   overflow-y: scroll;
 }
 
+/*.valid{
+  
+  visibility:hidden;
+}
 
+.invalid{
+  color:red;
+}*/
+
+/*div.spacing h5.errorMsg {
+  visibility: hidden;
+  display: inline-block !important;
+  color:green;
+}*/
+.errorMsg.ng-hide{
+  display: block!important;
+  visibility: hidden;
+}
+
+.valid{
+  /*visibility: hidden;*/
+  /*display: inline-block !important;*/
+  color:green;
+}
+
+.invalid{
+  /*visibility: visible;*/
+  /*display: inline-block !important;*/
+  color:red;
+}
+
+.errContainer1{
+  /*height:100px;*/
+}
+
+.errContainer2{
+  /*height:150px;*/
+}
+
+.form-group.spacing.firstRow {
+  margin-bottom: 0;
+}
+
+#apt{
+  /*padding-bottom: 35.556px;*/
+}
