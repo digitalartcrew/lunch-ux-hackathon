@@ -13,57 +13,39 @@
 <!-- <h1>Assistance Program 1</h1> -->
 
 <h5>Does anyone in your household participate in one or more of the following assistance programs ? Check all that apply.</h5>
-<!-- SNAP FDPIR TANF None -->
-<!-- <form> -->
+<form role="form" ng-submit="hasBenefits()">
 <div class="chkContainer">
     <div class="checkbox">
         <label for="snap">
-            <input type="checkbox" name="snap" value="snap" id="snap"> SNAP<br>
+            <input type="checkbox" ng-model="benefit1" name="snap" value="snap" id="snap"> SNAP<br>
         </label>
     </div>
     <div class="checkbox">
         <label for="fdpir">
-            <input type="checkbox" name="fdpir" value="fdpir" id="fdpir"> FDPIR<br>
+            <input type="checkbox" ng-model="benefit2" name="fdpir" value="fdpir" id="fdpir"> FDPIR<br>
         </label>
     </div>
     <div class="checkbox">
         <label for="tanf">
-            <input type="checkbox" name="tanf" value="tanf" id="tanf"> TANF<br>
+            <input type="checkbox" ng-model="benefit3" name="tanf" value="tanf" id="tanf"> TANF<br>
         </label>
     </div>
     <div class="checkbox">
         <label for="none">
-            <input type="checkbox" name="none" value="none" id="none"> NONE<br>
+            <input type="checkbox" ng-model="data.none" name="none" value="none" id="none"> NONE<br>
         </label>
     </div>
 </div>
-  <!-- <input type="submit" value="Submit"> -->
-<!-- </form> -->
+
+
 
 <h5>Please enter the case number of just ONE of your assistance program benefits.</h5>
 
-<!-- <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">case number</span>
-  <input type="text" class="form-control" placeholder="Case Number" aria-describedby="basic-addon1" name="casenumber">
-</div> -->
 
 <div class="form-group spacing" id="daytime">
   <label for="phone">CASE NUMBER</label>
-  <input type="phone" class="form-control" id="caseNumber">
+  <input type="phone" ng-model="casenumber" class="form-control" id="caseNumber">
 </div>
-<!-- <div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
-<div class="checkbox disabled">
-  <label>
-    <input type="checkbox" value="">
-    Option two is disabled
-  </label>
-</div> -->
-
 
 <div class="form-group row">
 <div class="inline-block">
@@ -74,17 +56,14 @@
       <span class="glyphicon glyphicon glyphicon-backward"></span>
       Back
       </a>
-
-      <a ui-sref="#" class="btn btn-info">
-      Save<span class="glyphicon glyphicon glyphicon-save"></span>
-      </a>
-      <a ui-sref="form.childStatus1" class="btn btn-info">
-      Continue<span class="glyphicon glyphicon-forward"></span>
-      </a>
+      <button class="btn btn-info" ng-click="hasBenefits(benefit)">
+                   Continue<span class="glyphicon glyphicon-forward"></span> 
+                 </button>
     </div>
   </div>
   </div>
 </div>
+</form>
 
   </div>
       </div>

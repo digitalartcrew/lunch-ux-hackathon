@@ -49,7 +49,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.assistanceProgram1', {
     url: '/assistanceProgram1',
-    templateUrl: 'views/form-assistanceProgram1.html'
+    templateUrl: 'views/form-assistanceProgram1.html',
+    controller: 'AssistCtrl'
   })
 
   .state('form.assistanceProgram2', {
@@ -59,7 +60,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.childStatus1', {
     url: '/childStatus1',
-    templateUrl: 'views/form-childStatus1.html'
+    templateUrl: 'views/form-childStatus1.html',
+    controller: 'ChildStatusController'
   })
 
   .state('form.childStatus2', {
@@ -70,6 +72,12 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.childrenInHousehold1', {
     url: '/childrenInHousehold1',
     templateUrl: 'views/form-childrenInHousehold1.html',
+    controller: 'ChildrenController'
+  })
+
+  .state('form.childrenInHousehold1Skip', {
+    url: '/childrenInHousehold1skip',
+    templateUrl: 'views/form-childrenInHousehold1-skip.html',
     controller: 'ChildrenController'
   })
 
@@ -182,6 +190,12 @@ app.config(function($stateProvider,$urlRouterProvider) {
     url: '/children/new',
     controller: "NewChildController",
     templateUrl: "views/c-new.html"
+  })
+
+   .state('form.child-new2', {
+    url: '/children/newnew',
+    controller: "NewChildController",
+    templateUrl: "views/c-new2.html"
   })
 
   .state('form.child-single', {

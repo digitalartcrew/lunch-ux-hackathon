@@ -99,6 +99,22 @@ app.controller("MainAdultController", function($scope, $location, AdultService, 
   };
 });
 
+app.controller("AssistCtrl", function($scope, $location, $state){
+    $scope.benefit1 = false;
+    $scope.benefit2 = false;
+    $scope.benefit3 = false;
+    $scope.casenumber;
+
+    $scope.hasBenefits = function(benefit){
+      if($scope.benefit1 || $scope.benefit2 || $scope.benefit3){
+        $state.go('form.childrenInHousehold1');
+        console.log($scope.casenumber)
+      }else{
+        $state.go('form.childStatus1');
+      }
+    } 
+});
+
 
 
 app.controller("NewAdultController", function($scope, $location, AdultService, $state){
@@ -148,6 +164,12 @@ app.controller("NewChildController", function($scope, $location, ChildService, $
       $state.go('form.childrenInHousehold1');
     });
   };
+
+  $scope.createChild2 = function(child){
+    ChildService.save(child, function(){
+      $state.go('form.childrenInHousehold1Skip');
+    });
+  };
 });
 
 app.controller("ChildController", function($scope, $location, $routeParams, ChildService, $state){
@@ -176,6 +198,19 @@ app.controller("EditChildController", function($scope, $location, $routeParams, 
 app.controller("ReviewController", function($scope, $location, AdultService, ChildService, $state){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
+});
+
+
+app.controller("ChildStatusController", function($scope, $location, $state){
+  $scope.childStatus = function(){
+    if ($scope.fosterchild || $scope.runaway || $scope.homeless || $scope.headstart){
+      $state.go('form.childrenInHousehold1Skip');
+    }else if ($scope.fosterchildsome || $scope.runawaysome || $scope.homelesssome || $scope.headstartsome){
+      $state.go('form.childrenInHousehold1');
+    }else{
+      $state.go('form.childrenInHousehold1');
+    }
+  }
 });
 
 //SIG CONTROLLER
