@@ -50,10 +50,7 @@ app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state
     } else if ($state.includes('form.review')){
   $scope.widthbar = "width: 100%";
   $scope.step = "Step 8 of 8";
-    } else{
-  $scope.widthbar = "width: 0%" 
-    }
-
+    } 
   };
 
 
