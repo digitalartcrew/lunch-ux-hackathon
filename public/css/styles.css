@@ -242,6 +242,10 @@
   padding-right: 120px;
 }
 
+.squeeze {
+  margin-bottom: -30px;
+}
+
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */
 #form-views.ng-enter,

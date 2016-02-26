@@ -18,7 +18,7 @@
 
           <div class="form-group spacing firstRow" ng-class="{invalid:adultContactForm.firstname.$invalid && adultContactForm.firstname.$touched, valid:adultContactForm.firstname.$valid}">
             <label for="firstname">FIRST NAME</label><br>
-            <input type="text" class="form-control" id="firstname" name="firstname" ng-required="true" ng-model="adult.firstname">
+            <input type="text" class="form-control squeeze" id="firstname" name="firstname" ng-required="true" ng-model="adult.firstname">
             <!-- <div class="errContainer1"> -->
             <h5 class="form-head errorMsg" ng-show="adultContactForm.firstname.$invalid && adultContactForm.firstname.$touched">Please enter a first name</h5>
             <!-- </div> -->
@@ -26,7 +26,7 @@
 
           <div class="form-group spacing firstRow" ng-class="{invalid:adultContactForm.lastname.$invalid && adultContactForm.lastname.$touched, valid:adultContactForm.lastname.$valid}">
             <label for="lastname">LAST NAME</label><br>
-            <input name="lastname" ng-required="true" type="lastname" class="form-control" id="lastname" ng-model="adult.lastname">
+            <input name="lastname" ng-required="true" type="lastname" class="form-control squeeze" id="lastname" ng-model="adult.lastname">
             <!-- <div class="errContainer2"> -->
             <h5 class="form-head errorMsg" ng-show="adultContactForm.lastname.$invalid && adultContactForm.lastname.$touched">Please enter a last name</h5>
             <!-- </div> -->
@@ -35,19 +35,19 @@
           <h5>Address (if available)</h5>
           <div class="form-group spacing firstRow" ng-class="{invalid:adultContactForm.address.$invalid && adultContactForm.address.$touched, valid:adultContactForm.address.$valid}">
             <label for="address">STREET ADDRESS</label>
-            <input ng-model="adult.address" type="address" name="address" ng-required="true" class="form-control" id="address">
+            <input ng-model="adult.address" type="address" name="address" ng-required="true" class="form-control squeeze" id="address">
             <h5 class="form-head errorMsg" ng-show="adultContactForm.address.$invalid && adultContactForm.address.$touched">Please enter a valid address</h5>
           </div>
 
           <div class="form-group spacing" ng-class="{invalid:adultContactForm.apt.$invalid && adultContactForm.apt.$touched}">
             <label for="apt">APT#</label><br>
-            <input ng-model="adult.apt" type="apt" class="form-control" id="apt" name="apt">
+            <input ng-model="adult.apt" type="apt" class="form-control squeeze" id="apt" name="apt">
             <h5 class="form-head errorMsg" ng-show="adultContactForm.apt.$invalid">&nbsp</h5>
           </div><br>
 
           <div class="form-group spacing firstRow" ng-class="{invalid:adultContactForm.city.$invalid && adultContactForm.city.$touched, valid:adultContactForm.city.$valid}">
             <label for="city">CITY</label><br>
-            <input ng-model="adult.city" type="city" class="form-control" id="city" name="city" ng-required="true">
+            <input ng-model="adult.city" type="city" class="form-control squeeze" id="city" name="city" ng-required="true">
             <h5 class="form-head errorMsg" ng-show="adultContactForm.city.$invalid && adultContactForm.city.$touched">Please enter a city</h5>
           </div>
 
@@ -113,7 +113,7 @@
 
           <div class="form-group spacing" ng-class="{invalid:adultContactForm.zip.$invalid && adultContactForm.zip.$touched, valid:adultContactForm.zip.$valid}">
             <label for="zipcode">ZIP CODE</label><br>
-            <input ng-model="adult.zipcode" type="zipcode" class="form-control" id="zipcode" name="zipcode" ng-required="true" ng-pattern="/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/">
+            <input ng-model="adult.zipcode" type="zipcode" class="form-control squeeze" id="zipcode" name="zipcode" ng-required="true" ng-pattern="/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/">
             <h5 class="form-head errorMsg" ng-show="adultContactForm.zip.$invalid && adultContactForm.zipcode.$touched">Please enter a valid zip code</h5>
 
           </div>
@@ -122,13 +122,13 @@
 
           <div class="form-group spacing" id="daytime" ng-class="{invalid:adultContactForm.phone.$invalid, valid:adultContactForm.phone.$valid}">
             <label for="phone">DAYTIME PHONE</label>
-            <input ng-model="adult.phone" type="phone" class="form-control" id="phone" name="phone">
+            <input ng-model="adult.phone" type="phone" class="form-control squeeze" id="phone" name="phone">
             <h5 class="form-head errorMsg" ng-show="adultContactForm.zip.$invalid && adultContactForm.zip.$touched">Please enter a valid phone number</h5>
           </div>
 
           <div class="form-group spacing" ng-class="{invalid:adultContactForm.email.$invalid, valid:adultContactForm.email.$valid}">
             <label for="email">EMAIL ADDRESS</label>
-            <input ng-model="adult.email" type="email" class="form-control" id="email" name="email">
+            <input ng-model="adult.email" type="email" class="form-control squeeze" id="email" name="email">
             <h5 class="form-head errorMsg" ng-show="adultContactForm.zip.$invalid">Please enter a valid email address</h5>
           </div>
       
