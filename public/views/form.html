@@ -60,9 +60,9 @@
 <div class="form-inline">
     <h3 class="form-control">USA Free & Reduced Lunch Application</h3>
     <div class="form-inline" style="float: right;">
-    <a class="#" href="#">Hi {{ currentUser.username | uppercase }}</a>
-    <a class="btn btn-default" href="#">Help</a>
-    <a class="btn btn-default" href="#">Logout</a>
+    <a class="form-control" href="#">Hi {{ currentUser.username | uppercase }}</a>
+    <a class="form-control" href="#">Help</a>
+    <a class="form-control" href="#">Logout</a>
     </div>
 </div>
   
@@ -72,25 +72,25 @@
    
     <div class="progress">
 
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
-        Step 1 of 5
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="7" style="{{widthbar}}">
+        {{step}}
       </div>
     </div>
    
     <div class="navbar">
        <div class="navbar-inner">
              <ul class="nav nav-pills">
-                <li><a ui-sref-active="active" ui-sref="form.welcome">Welcome</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.statements">Statements</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.adultContactInfo1">Adult Contact Info</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.assistanceProgram1">Assistant <br>Programs</a></li>
-                  <li><a ui-sref-active="active" ui-sref="form.assistanceProgram2"><span class="navCircle"></span></a></li>
-                <li><a ui-sref-active="active" ui-sref="form.childStatus1">Status of <br>Children</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.childStatus2"></a></li>
-                <li><a ui-sref-active="active" ui-sref="form.childrenInHousehold1">Children in <br>Household</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.adultsInHousehold1">Adults in <br>Household</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.income1">Income</a></li>
-                <li><a ui-sref-active="active" ui-sref="form.review">Review</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.welcome" class="one">Welcome</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.statements" class="two">Statements</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.adultContactInfo1" class="three">Adult Contact Info</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.assistanceProgram1" class="four">Assistant <br>Programs</a></li>
+                  <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.assistanceProgram2"><span class="navCircle"></span></a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.childStatus1" class="five">Status of <br>Children</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.childStatus2"></a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.childrenInHousehold1" class="six">Children in <br>Household</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.adultsInHousehold1" class="seven">Adults in <br>Household</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.income1" class="eight">Income</a></li>
+                <li ng-click="showProgress()"><a ui-sref-active="active" ui-sref="form.review" class="nine">Review</a></li>
              </ul>
        </div>
     </div>

@@ -21,7 +21,42 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
 
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.formData = {};
-  // $scope.title = "Test Header"
+
+  $scope.showProgress = function () {
+
+      if($state.includes('form.welcome')){
+  $scope.widthbar = "width: 10%";
+  $scope.step = "Step 1 of 8";
+    } else if ($state.includes('form.statements')){
+  $scope.widthbar = "width: 20%";
+  $scope.step = "Step 2 of 8";
+    } else if ($state.includes('form.adultContactInfo1')){
+  $scope.widthbar = "width: 30%";
+  $scope.step = "Step 3 of 8";
+    } else if ($state.includes('form.assistanceProgram1')){
+  $scope.widthbar = "width: 40%"
+    } else if ($state.includes('form.childStatus1')){
+  $scope.widthbar = "width: 50%";
+  $scope.step = "Step 4 of 8";
+    } else if ($state.includes('form.childrenInHousehold1')){
+  $scope.widthbar = "width: 60%";
+  $scope.step = "Step 5 of 8";
+    } else if ($state.includes('form.adultsInHousehold1')){
+  $scope.widthbar = "width: 70%";
+  $scope.step = "Step 6 of 8";
+    } else if ($state.includes('form.income1')){
+  $scope.widthbar = "width: 90%";
+  $scope.step = "Step 7 of 8";
+    } else if ($state.includes('form.review')){
+  $scope.widthbar = "width: 100%";
+  $scope.step = "Step 8 of 8";
+    } else{
+  $scope.widthbar = "width: 0%" 
+    }
+
+  };
+
+
 });
 
 app.controller("WelcomeCtrl", function($rootScope, $scope, $http, $location, $state) {
