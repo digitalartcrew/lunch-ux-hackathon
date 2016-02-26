@@ -46,6 +46,20 @@
 </div>
  -->
 
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">USDA Free & Reduced Lunch Application</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi {{ currentUser.username | uppercase }}</a></li>
+      <li><a href="#"><span></span> Help</a></li>
+      <li><a href="#"><span ng-click="logout()"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
  <div class="container" id="myWizard">
 <!--   <ul class="nav navbar-nav navbar-right" id="navHeader">
 
@@ -57,15 +71,17 @@
    
   <!--   <div class="inline-block"><span></span></div> -->
    <!--  <p style="float: right;"><span>Hi {{ currentUser.username | uppercase }}</span> <span><a ui-sref-active="active" ui-sref="#"> HELP</a> </span><span><a ui-sref-active="active" ng-click="logout()"> LOGOUT</a></span></p> -->
-<div class="form-inline">
-    <h3 class="form-control">USA Free & Reduced Lunch Application</h3>
+<!-- <div class="form-inline">
+    <h3 class="form-control">USDA Free & Reduced Lunch Application</h3>
     <div class="form-inline" style="float: right;">
-    <a class="form-control" href="#">Hi {{ currentUser.username | uppercase }}</a>
-    <a class="form-control" href="#">Help</a>
-    <a class="form-control" href="#">Logout</a>
+    <ul>
+    <li class="form-control" href="#">Hi {{ currentUser.username | uppercase }}</li>
+    <li class="form-control" href="#">Help</li>
+    <li class="form-control" href="#">Logout</li>
+    </ul>
     </div>
 </div>
-  
+   -->
 
    
  
