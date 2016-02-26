@@ -118,12 +118,16 @@
   left: 250px;
 }
 
-
+#navHeader {
+  position: relative;
+  width: 100%;
+  color: black;
+}
 
 #progressHeader a{ 
   color:#FFF; 
   display:inline-block; 
-  height:50px; 
+  /*height:50px; */
   font-size:10px; 
   /*margin:0 auto 10px; */
   margin-right: 40px;
@@ -263,11 +267,6 @@
   margin-top: 70px;
 }
 
-/*#signature{
-  width: 200px;
-  margin-right: 20px
-}*/
-
 input[type=checkbox] {
   /* All browsers except webkit*/
   transform: scale(1.5);
@@ -314,49 +313,20 @@ input[type=checkbox] {
   overflow-y: scroll;
 }
 
-/*.valid{
-  
-  visibility:hidden;
-}
-
-.invalid{
-  color:red;
-}*/
-
-/*div.spacing h5.errorMsg {
-  visibility: hidden;
-  display: inline-block !important;
-  color:green;
-}*/
 .errorMsg.ng-hide{
   display: block!important;
   visibility: hidden;
 }
 
 .valid{
-  /*visibility: hidden;*/
-  /*display: inline-block !important;*/
   color:green;
 }
 
 .invalid{
-  /*visibility: visible;*/
-  /*display: inline-block !important;*/
   color:red;
-}
-
-.errContainer1{
-  /*height:100px;*/
-}
-
-.errContainer2{
-  /*height:150px;*/
 }
 
 .form-group.spacing.firstRow {
   margin-bottom: 0;
 }
 
-#apt{
-  /*padding-bottom: 35.556px;*/
-}

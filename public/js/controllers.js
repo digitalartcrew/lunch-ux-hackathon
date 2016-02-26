@@ -6,6 +6,29 @@ app.controller("NavCtrl", function($rootScope, $scope, $http, $location, $state)
         $location.url("/login");
       });
   };
+  $scope.goNext = function(i){
+      
+      $('[href=#step'+(i+1)+']').tab('show');
+      return false;
+      
+    };
+    
+    // $(document).ready(function() {
+
+    //   // use jQuery to update progress bar
+    //   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        
+    //     //update progress
+    //     var step = $(e.target).data('step');
+    //     var percent = (parseInt(step) / 5) * 100;
+        
+    //     $('.progress-bar').css({width: percent + '%'});
+    //     $('.progress-bar').text("Step " + step + " of 5");
+        
+    //   });
+
+    // });
+
 });
 
 app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $state) {
@@ -210,7 +233,7 @@ app.controller("ChildStatusController", function($scope, $location, $state){
     }else{
       $state.go('form.childrenInHousehold1');
     }
-  }
+  };
 });
 
 //SIG CONTROLLER
