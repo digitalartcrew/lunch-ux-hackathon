@@ -1,4 +1,8 @@
 
+.form-head {
+  margin-top: -10px;
+}
+
 #apple {
   margin-left: -80px;
 }
@@ -234,6 +238,8 @@
 
 #form-views{
   margin-top: 180px;
+  padding-left: 50px;
+  padding-right: 120px;
 }
 
 /* basic styling for entering and leaving */
