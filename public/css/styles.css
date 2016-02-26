@@ -1,4 +1,9 @@
 
+.myWizard{
+  padding-left: 50px;
+  padding-right: 120px;
+  }
+
 .form-head {
   margin-top: -10px;
 }
@@ -44,7 +49,7 @@
 }
 
 .blocks{
-  width: 120px;
+  width: 160px;
   height: 60px;
 }
 
