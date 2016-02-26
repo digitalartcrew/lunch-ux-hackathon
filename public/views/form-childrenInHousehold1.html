@@ -28,8 +28,8 @@
     <td>{{child.age}}</td>
     <td>{{child.ethnicity}}</td>
     <td>{{child.status}}</td>
-    <td><a class="btn btn-info btn-lg" ui-sref="form.child-edit"><button>Edit</button></a></td>
-    <td><button class="btn btn-info btn-lg" ng-click="deleteChild(child)">Delete</button></td>
+    <td><a ui-sref="form.child-edit"><button class="btn btn-info btn-sm">Edit</button></a></td>
+    <td><button class="btn btn-info btn-sm" ng-click="deleteChild(child)">Delete</button></td>
   </tr>
  
 </table>
@@ -41,7 +41,7 @@
 
 
 
-<a ui-sref="form.child-new"><button class="btn btn-info btn-lg">Add Child</button></a>
+<a ui-sref="form.child-new"><button class="btn btn-info btn-md">Add Child</button></a>
 </center>
 
 <div class="form-group row">

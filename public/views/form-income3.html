@@ -20,8 +20,8 @@
   </tr>
   <tr ng-repeat="adult in adults">
     <td>{{adult.firstname}} {{adult.lastname}}</td>
-    <td><a ui-sref="form.income4"><button>Edit</button></a></td>
-    <td><button ng-click="deleteAdult(adult)">Delete</button></td>
+    <td><a ui-sref="form.income4"><button class="btn btn-info btn-md">Edit</button></a></td>
+    <td><button class="btn btn-info btn-md" ng-click="deleteAdult(adult)">Delete</button></td>
   </tr>
  
 </table>

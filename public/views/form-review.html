@@ -23,8 +23,8 @@
     <td>{{adult.address}} {{adult.apt}}</td>
     <td>{{adult.city}} {{adult.state}}</td>
     <td>{{adult.phone}} {{adult.email}}</td>
-    <td><a ui-sref="form.adults-edit"><button>Edit</button></a></td>
-    <td><button ng-click="deleteAdult(adult)">Delete</button></td>
+    <td><a ui-sref="form.adults-edit"><button class="btn btn-info btn-sm">Edit</button></a></td>
+    <td><button class="btn btn-info btn-sm" ng-click="deleteAdult(adult)">Delete</button></td>
   </tr>
  
 </table>
@@ -47,8 +47,8 @@
     <td>{{child.age}}</td>
     <td>{{child.ethnicity}}</td>
     <td>{{child.status}}</td>
-    <td><a ui-sref="form.child-edit"><button>Edit</button></a></td>
-    <td><button ng-click="deleteChild(child)">Delete</button></td>
+    <td><a ui-sref="form.child-edit"><button class="btn btn-info btn-sm">Edit</button></a></td>
+    <td><button class="btn btn-info btn-sm" ng-click="deleteChild(child)">Delete</button></td>
   </tr>
  
 </table>
