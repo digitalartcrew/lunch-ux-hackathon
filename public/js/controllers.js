@@ -189,8 +189,8 @@ app.controller("NewAdultController", function($scope, $location, AdultService, $
   };
 });
 
-app.controller("AdultController", function($scope, $location, $stateParams, AdultService, $state){
-  AdultService.get({id: $stateParams.id}, function(adult){
+app.controller("AdultController", function($scope, $location, $routeParams, AdultService, $state){
+  AdultService.get({id: $routeParams.id}, function(adult){
      $scope.adult = adult;
   }, function(err){
     $state.go('form.adultsInHousehold1');
@@ -198,8 +198,8 @@ app.controller("AdultController", function($scope, $location, $stateParams, Adul
 });
 
 
-app.controller("EditAdultController", function($scope, $location, $stateParams, AdultService, $state){
-  AdultService.get({id: $stateParams.id},function(adult){
+app.controller("EditAdultController", function($scope, $location, $routeParams, AdultService, $state){
+  AdultService.get({id: $routeParams.id},function(adult){
     $scope.adult = adult;
   }, function(err){
     $state.go('form.adultsInHousehold1');
@@ -236,8 +236,8 @@ app.controller("NewChildController", function($scope, $location, ChildService, $
   };
 });
 
-app.controller("ChildController", function($scope, $location, $stateParams, ChildService, $state){
-  ChildService.get({id: $stateParams.id}, function(child){
+app.controller("ChildController", function($scope, $location, $routeParams, ChildService, $state){
+  ChildService.get({id: $routeParams.id}, function(child){
     $scope.child = child;
   }, function(err){
     $location.path('/');
@@ -245,8 +245,8 @@ app.controller("ChildController", function($scope, $location, $stateParams, Chil
 });
 
 
-app.controller("EditChildController", function($scope, $location, $stateParams, ChildService, $state){
-  ChildService.get({id: $stateParams.id},function(child){
+app.controller("EditChildController", function($scope, $location, $routeParams, ChildService, $state){
+  ChildService.get({id: $routeParams.id},function(child){
     $scope.child = child;
   }, function(err){
     $state.go('form.childrenInHousehold1');
@@ -259,12 +259,12 @@ app.controller("EditChildController", function($scope, $location, $stateParams, 
   };
 });
 
-app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state, $stateParams){
+app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state, $routeParams){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
   $scope.casenumbers = CaseNumberService.query();
 
-  // ChildService.get({id: $stateParams.id},function(child){
+  // ChildService.get({id: $routeParams.id},function(child){
   //   $scope.child = child;
   // }, function(err){
   //   $state.go('form.childrenInHousehold1');
@@ -276,7 +276,7 @@ app.controller("ReviewController", function($scope, $location, AdultService, Chi
   //   });
   // };
 
-  //   AdultService.get({id: $stateParams.id},function(adult){
+  //   AdultService.get({id: $routeParams.id},function(adult){
   //   $scope.adult = adult;
   // }, function(err){
   //   $state.go('form.adultsInHousehold1');
