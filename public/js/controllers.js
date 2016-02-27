@@ -22,49 +22,60 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.formData = {};
 
+
+
   $scope.step1 = function() {
       $scope.widthbar = "width: 10%";
-      $scope.step = "Step 1 of 9";
+      $scope.step = "";
+      $scope.pstatus = "progress-bar-danger"
   }
 
    $scope.step2 = function() {
       $scope.widthbar = "width: 20%";
-      $scope.step = "Step 2 of 9";
+      $scope.step = "";
+      $scope.pstatus = "progress-bar-danger"
   }
 
    $scope.step3 = function() {
       $scope.widthbar = "width: 30%";
-      $scope.step = "Step 3 of 9";
+      $scope.step = "Step 1 of 7";
+      $scope.pstatus = "progress-bar-warning"
   }
 
    $scope.step4 = function() {
       $scope.widthbar = "width: 40%";
-      $scope.step = "Step 4 of 9";
+      $scope.step = "Step 2 of 7";
+      $scope.pstatus = "progress-bar-warning"
   }
 
     $scope.step5 = function() {
       $scope.widthbar = "width: 50%";
-      $scope.step = "Step 5 of 9";
+      $scope.step = "Step 3 of 7";
+      $scope.pstatus = "progress-bar-info"
   }
 
     $scope.step6 = function() {
       $scope.widthbar = "width: 60%";
-      $scope.step = "Step 6 of 9";
+      $scope.step = "Step 4 of 7";
+      $scope.pstatus = "progress-bar-info"
   }
 
     $scope.step7 = function() {
       $scope.widthbar = "width: 70%";
-      $scope.step = "Step 7 of 9";
+      $scope.step = "Step 5 of 7";
+      $scope.pstatus = "progress-bar-info"
   }
 
     $scope.step8 = function() {
       $scope.widthbar = "width: 85%";
-      $scope.step = "Step 8 of 9";
+      $scope.step = "Step 6 of 7";
+      $scope.pstatus = "progress-bar-success"
   }
 
     $scope.step9 = function() {
       $scope.widthbar = "width: 100%";
-      $scope.step = "Step 9 of 9";
+      $scope.step = "Step 7 of 7";
+      $scope.pstatus = "progress-bar-success"
   }
 
 });
@@ -145,11 +156,10 @@ app.controller("MainAdultController", function($scope, $location, AdultService, 
   };
 });
 
-app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberService,$rootScope){
+app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberService){
    $scope.addCaseNumber = function(casenumber){
     CaseNumberService.save(casenumber, function(){
-      $rootScope.currentUser = user;
-      console.log(user.casenumber)
+      console.log(casenumber)
     });
   };
 
@@ -161,11 +171,12 @@ app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberServic
     $scope.hasBenefits = function(benefit){
       if($scope.benefit1 || $scope.benefit2 || $scope.benefit3){
         $state.go('form.childrenInHousehold1');
-        console.log($scope.casenumber)
+        console.log($scope.casenumber);
       }else{
         $state.go('form.childStatus1');
-      }
-    } 
+      };
+ }  
+
 });
 
 
@@ -248,33 +259,34 @@ app.controller("EditChildController", function($scope, $location, $stateParams, 
   };
 });
 
-app.controller("ReviewController", function($scope, $location, AdultService, ChildService, $state, $stateParams){
+app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state, $stateParams){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
+  $scope.casenumbers = CaseNumberService.query();
 
-  ChildService.get({id: $stateParams.id},function(child){
-    $scope.child = child;
-  }, function(err){
-    $state.go('form.childrenInHousehold1');
-  });
-  $scope.editChild = function(child){
-    console.log("This is working!");
-    $scope.child.$update(function(){
-      $state.go('form.childrenInHousehold1');
-    });
-  };
+  // ChildService.get({id: $stateParams.id},function(child){
+  //   $scope.child = child;
+  // }, function(err){
+  //   $state.go('form.childrenInHousehold1');
+  // });
+  // $scope.editChild = function(child){
+  //   console.log("This is working!");
+  //   $scope.child.$update(function(){
+  //     $state.go('form.childrenInHousehold1');
+  //   });
+  // };
 
-    AdultService.get({id: $stateParams.id},function(adult){
-    $scope.adult = adult;
-  }, function(err){
-    $state.go('form.adultsInHousehold1');
-  });
-  $scope.editAdult = function(adult){
-    console.log("This is working!");
-    $scope.adult.$update(function(){
-      $location.path('/');
-    });
-  };
+  //   AdultService.get({id: $stateParams.id},function(adult){
+  //   $scope.adult = adult;
+  // }, function(err){
+  //   $state.go('form.adultsInHousehold1');
+  // });
+  // $scope.editAdult = function(adult){
+  //   console.log("This is working!");
+  //   $scope.adult.$update(function(){
+  //     $location.path('/');
+  //   });
+  // };
 
   $scope.deleteAdult = function(adult){
     adult.$delete(function(adult){

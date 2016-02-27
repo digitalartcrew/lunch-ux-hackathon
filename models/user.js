@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var Adult = require('./adult');
 var Child = require('./child');
+var Casenumber = require('./casenumber');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
