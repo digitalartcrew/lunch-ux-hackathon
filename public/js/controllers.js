@@ -170,10 +170,12 @@ app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberServic
 
     $scope.hasBenefits = function(benefit){
       if($scope.benefit1 || $scope.benefit2 || $scope.benefit3){
+        console.log("Benefits are working");
         $state.go('form.childrenInHousehold1');
-        console.log($scope.casenumber);
+        // $state.go('form.review');
       }else{
         $state.go('form.childStatus1');
+        // $state.go('form.wecome');
       };
  }  
 

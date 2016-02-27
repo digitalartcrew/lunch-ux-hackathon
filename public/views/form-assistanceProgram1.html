@@ -13,7 +13,7 @@
     <div class="panel-body">
       <!-- <h1>Assistance Program 1</h1> -->
 
-      <form role="form" ng-submit="hasBenefits()">
+      <form role="form" ng-submit="hasBenefits(benefit)">
         <h5>Does anyone in your household participate in one or more of the following assistance programs ? Check all that apply.</h5>
         <div class="chkContainer">
           <div class="checkbox">
@@ -58,7 +58,7 @@
 
                     Back
                   </a>
-                  <button ng-click="step5(); addCaseNumber(casenumber); hasBenefits(benefit)" ui-sref="form.childStatus1" class="btn btn-primary btn-lg">
+                  <button ng-click="step5(); addCaseNumber(casenumber); hasBenefits(benefit)" class="btn btn-primary btn-lg">
                    Continue
                  </button>
 
