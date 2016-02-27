@@ -5,6 +5,7 @@ var express = require('express');
 			morgan = require("morgan"),
 			adultRoutes = require("./routes/adults"),
 			childRoutes = require("./routes/children"),
+			caseNumberRoutes = require("./routes/casenumbers"),
 			path = require("path");
 
 app.use(express.static(__dirname + '/public'));
@@ -39,6 +40,7 @@ app.use(methodOverride('_method'));
 
 app.use('/api/adults', adultRoutes);
 app.use('/api/children', childRoutes);
+app.use('/api/casenumbers', caseNumberRoutes);
 
 //Routes
 require('./routes/auth.js')(app,passport); //load our routes and full configured passport
