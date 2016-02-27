@@ -11,10 +11,27 @@
       <div class="panel-heading">REVIEW</div>
       <div class="panel-body">
 
+
+
 <div class="col-md-10-offset-1">
-<div ng-repeat="casenumber in casenumbers">
-  Casenumber: {{casenumber.casenumber}}
+<table style="width:100%">
+  <tr>
+    <th>CASE NUMBER</th>
+    <th></th>    
+    <th></th>
+  </tr>
+  <tr ng-repeat="casenumber in casenumbers">
+    <td>{{casenumber.casenumber}}</td>
+
+    <td><a ui-sref="form.adults-edit"><button class="btn btn-primary btn-sm">Edit</button></a></td>
+    <td><button class="btn btn-primary btn-sm" ng-click="deleteCasenumber(casenumber)">Delete</button></td>
+  </tr>
+ 
+</table>
 </div>
+
+
+<div class="col-md-10-offset-1">
 <table style="width:100%">
   <tr>
     <th>NAMES OF ADULTS</th>

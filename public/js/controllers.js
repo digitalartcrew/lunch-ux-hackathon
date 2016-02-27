@@ -278,6 +278,12 @@ app.controller("ReviewController", function($scope, $location, AdultService, Chi
     });
   };
 
+   $scope.deleteCasenumber = function(casenumber){
+    casenumber.$delete(function(casenumber){
+      $scope.casenumbers.splice($scope.casenumbers.indexOf(casenumber),1);
+    });
+  };
+
 
 });
 
