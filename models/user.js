@@ -15,6 +15,10 @@ var userSchema = mongoose.Schema({
   children: [{
   	type: mongoose.Schema.Types.ObjectId,
   	ref: "Child"
+  }],
+  casenumbers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Casenumber"
   }]
 });
 

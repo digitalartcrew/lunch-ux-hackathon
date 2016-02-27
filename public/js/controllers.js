@@ -22,85 +22,50 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.formData = {};
 
-  $scope.step1 = function(argument) {
+  $scope.step1 = function() {
       $scope.widthbar = "width: 10%";
-  $scope.step = "Step 1 of 9";
+      $scope.step = "Step 1 of 9";
   }
 
-   $scope.step2 = function(argument) {
+   $scope.step2 = function() {
       $scope.widthbar = "width: 20%";
-  $scope.step = "Step 2 of 9";
+      $scope.step = "Step 2 of 9";
   }
 
-   $scope.step3 = function(argument) {
+   $scope.step3 = function() {
       $scope.widthbar = "width: 30%";
-  $scope.step = "Step 3 of 9";
+      $scope.step = "Step 3 of 9";
   }
 
-   $scope.step4 = function(argument) {
+   $scope.step4 = function() {
       $scope.widthbar = "width: 40%";
-  $scope.step = "Step 4 of 9";
+      $scope.step = "Step 4 of 9";
   }
 
-    $scope.step5 = function(argument) {
+    $scope.step5 = function() {
       $scope.widthbar = "width: 50%";
-  $scope.step = "Step 5 of 9";
+      $scope.step = "Step 5 of 9";
   }
 
-    $scope.step6 = function(argument) {
+    $scope.step6 = function() {
       $scope.widthbar = "width: 60%";
-  $scope.step = "Step 6 of 9";
+      $scope.step = "Step 6 of 9";
   }
 
-    $scope.step7 = function(argument) {
+    $scope.step7 = function() {
       $scope.widthbar = "width: 70%";
-  $scope.step = "Step 7 of 9";
+      $scope.step = "Step 7 of 9";
   }
 
-    $scope.step8 = function(argument) {
+    $scope.step8 = function() {
       $scope.widthbar = "width: 85%";
-  $scope.step = "Step 8 of 9";
+      $scope.step = "Step 8 of 9";
   }
 
-    $scope.step9 = function(argument) {
+    $scope.step9 = function() {
       $scope.widthbar = "width: 100%";
-  $scope.step = "Step 9 of 9";
+      $scope.step = "Step 9 of 9";
   }
-
-
-  // $scope.showProgress = function () {
-  //     if($state.is('form.welcome')){
-
-  //   } else if ($state.is('form.statements')){
-  // $scope.widthbar = "width: 20%";
-  // $scope.step = "Step 2 of 9";
-  //   } else if ($state.is('form.adultContactInfo1')){
-  // $scope.widthbar = "width: 30%";
-  // $scope.step = "Step 3 of 9";
-  //   } else if ($state.is('form.assistanceProgram1')){
-  // $scope.widthbar = "width: 40%"
-  //  $scope.step = "Step 4 of 9";
-  //   } else if ($state.is('form.childStatus1')){
-  // $scope.widthbar = "width: 50%";
-  // $scope.step = "Step 5 of 9";
-  //   } else if ($state.is('form.childrenInHousehold1')){
-  // $scope.widthbar = "width: 60%";
-  // $scope.step = "Step 6 of 9";
-  //   } else if ($state.is('form.adultsInHousehold1')){
-  // $scope.widthbar = "width: 70%";
-  // $scope.step = "Step 7 of 9";
-  //   } else if ($state.is('form.income1')){
-  // $scope.widthbar = "width: 90%";
-  // $scope.step = "Step 9 of 9";
-  //   } else if ($state.is('form.review')){
-  // $scope.widthbar = "width: 100%";
-  // $scope.step = "Step 9 of 9";
-  //   }else{
-  //    $scope.widthbar = "width: 10%";
-  // $scope.step = "Step 1 of 9"; 
-  //   } 
-  // };
-
 
 });
 
@@ -180,7 +145,14 @@ app.controller("MainAdultController", function($scope, $location, AdultService, 
   };
 });
 
-app.controller("AssistCtrl", function($scope, $location, $state){
+app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberService,$rootScope){
+   $scope.addCaseNumber = function(casenumber){
+    CaseNumberService.save(casenumber, function(){
+      $rootScope.currentUser = user;
+      console.log(user.casenumber)
+    });
+  };
+
     $scope.benefit1 = false;
     $scope.benefit2 = false;
     $scope.benefit3 = false;
@@ -206,8 +178,8 @@ app.controller("NewAdultController", function($scope, $location, AdultService, $
   };
 });
 
-app.controller("AdultController", function($scope, $location, $routeParams, AdultService, $state){
-  AdultService.get({id: $routeParams.id}, function(adult){
+app.controller("AdultController", function($scope, $location, $stateParams, AdultService, $state){
+  AdultService.get({id: $stateParams.id}, function(adult){
      $scope.adult = adult;
   }, function(err){
     $state.go('form.adultsInHousehold1');
@@ -215,8 +187,8 @@ app.controller("AdultController", function($scope, $location, $routeParams, Adul
 });
 
 
-app.controller("EditAdultController", function($scope, $location, $routeParams, AdultService, $state){
-  AdultService.get({id: $routeParams.id},function(adult){
+app.controller("EditAdultController", function($scope, $location, $stateParams, AdultService, $state){
+  AdultService.get({id: $stateParams.id},function(adult){
     $scope.adult = adult;
   }, function(err){
     $state.go('form.adultsInHousehold1');
@@ -253,8 +225,8 @@ app.controller("NewChildController", function($scope, $location, ChildService, $
   };
 });
 
-app.controller("ChildController", function($scope, $location, $routeParams, ChildService, $state){
-  ChildService.get({id: $routeParams.id}, function(child){
+app.controller("ChildController", function($scope, $location, $stateParams, ChildService, $state){
+  ChildService.get({id: $stateParams.id}, function(child){
     $scope.child = child;
   }, function(err){
     $location.path('/');
@@ -262,8 +234,8 @@ app.controller("ChildController", function($scope, $location, $routeParams, Chil
 });
 
 
-app.controller("EditChildController", function($scope, $location, $routeParams, ChildService, $state){
-  ChildService.get({id: $routeParams.id},function(child){
+app.controller("EditChildController", function($scope, $location, $stateParams, ChildService, $state){
+  ChildService.get({id: $stateParams.id},function(child){
     $scope.child = child;
   }, function(err){
     $state.go('form.childrenInHousehold1');
@@ -276,9 +248,47 @@ app.controller("EditChildController", function($scope, $location, $routeParams, 
   };
 });
 
-app.controller("ReviewController", function($scope, $location, AdultService, ChildService, $state){
+app.controller("ReviewController", function($scope, $location, AdultService, ChildService, $state, $stateParams){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
+
+  ChildService.get({id: $stateParams.id},function(child){
+    $scope.child = child;
+  }, function(err){
+    $state.go('form.childrenInHousehold1');
+  });
+  $scope.editChild = function(child){
+    console.log("This is working!");
+    $scope.child.$update(function(){
+      $state.go('form.childrenInHousehold1');
+    });
+  };
+
+    AdultService.get({id: $stateParams.id},function(adult){
+    $scope.adult = adult;
+  }, function(err){
+    $state.go('form.adultsInHousehold1');
+  });
+  $scope.editAdult = function(adult){
+    console.log("This is working!");
+    $scope.adult.$update(function(){
+      $location.path('/');
+    });
+  };
+
+  $scope.deleteAdult = function(adult){
+    adult.$delete(function(adult){
+      $scope.adults.splice($scope.adults.indexOf(adult),1);
+    });
+  };
+
+ $scope.deleteChild = function(child){
+    child.$delete(function(child){
+      $scope.children.splice($scope.children.indexOf(child),1);
+    });
+  };
+
+
 });
 
 

@@ -6,3 +6,4 @@ mongoose.set("debug", true);
 module.exports.User = require("./user");
 module.exports.Child = require("./child");
 module.exports.Adult = require("./adult");
+module.exports.Casenumber = require("./casenumber");
