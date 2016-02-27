@@ -259,34 +259,10 @@ app.controller("EditChildController", function($scope, $location, $routeParams, 
   };
 });
 
-app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state, $routeParams){
+app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
   $scope.casenumbers = CaseNumberService.query();
-
-  // ChildService.get({id: $routeParams.id},function(child){
-  //   $scope.child = child;
-  // }, function(err){
-  //   $state.go('form.childrenInHousehold1');
-  // });
-  // $scope.editChild = function(child){
-  //   console.log("This is working!");
-  //   $scope.child.$update(function(){
-  //     $state.go('form.childrenInHousehold1');
-  //   });
-  // };
-
-  //   AdultService.get({id: $routeParams.id},function(adult){
-  //   $scope.adult = adult;
-  // }, function(err){
-  //   $state.go('form.adultsInHousehold1');
-  // });
-  // $scope.editAdult = function(adult){
-  //   console.log("This is working!");
-  //   $scope.adult.$update(function(){
-  //     $location.path('/');
-  //   });
-  // };
 
   $scope.deleteAdult = function(adult){
     adult.$delete(function(adult){
