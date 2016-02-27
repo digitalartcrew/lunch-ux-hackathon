@@ -29,6 +29,12 @@ app.config(function($stateProvider,$urlRouterProvider) {
     templateUrl: 'views/form-welcome.html',
     controller: 'WelcomeCtrl'
   })
+
+  .state('form.case-edit', {
+     url: '/casenumbers/:id/edit',
+    controller: "AssistCtrl",
+    templateUrl: "views/case-edit.html"
+  })
   
   // url will be /form/statements
   .state('form.statements', {
