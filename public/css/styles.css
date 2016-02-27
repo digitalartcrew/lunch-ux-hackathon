@@ -18,53 +18,61 @@ body{
 .one {
   background-color: cornflowerblue;
   color: #fff;
+  font-size: 18px;
 }
 
 .two {
   background-color: cornflowerblue;
   color: #fff;
+  font-size: 18px;
 }
 
 .three {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .four {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .five {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .six {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .seven {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .eight {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .nine {
   background-color: cornflowerblue;
    color: #fff;
+   font-size: 18px;
 }
 
 .blocks{
   width: 150px;
-  height: 60px;
+  height: 80px;
 }
-
 
 .unique {
   width: 50%;
