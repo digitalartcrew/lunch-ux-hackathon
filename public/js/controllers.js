@@ -148,12 +148,12 @@ app.controller("AdultsController", function($scope, $location, AdultService, $st
     });
   };
   //Get A Single Adult
-  AdultService.get({id: $scope.id}, function(adult){
-     $scope.adult = adult;
-  }, function(err){
-    $state.go('form.adultsInHousehold1');
-  });
-
+  // AdultService.get({id: $scope.id}, function(adult){
+  //    $scope.adult = adult;
+  // }, function(err){
+  //   $state.go('form.adultsInHousehold1');
+  // });
+  //Edit an adult
   $scope.editAdult = function(adult){
     console.log("This is working!");
     $scope.adult.$update(function(){
@@ -214,11 +214,11 @@ app.controller("ChildrenController", function($scope, $location, ChildService, $
     });
   };
   //Grab Single Child
-   ChildService.get({id: $stateParams.id}, function(child){
-    $scope.child = child;
-  }, function(err){
-    $location.path('/');
-  });
+  //  ChildService.get({id: $stateParams.id}, function(child){
+  //   $scope.child = child;
+  // }, function(err){
+  //   $location.path('/');
+  // });
    //Edit A Child
    $scope.editChild = function(child){
     console.log("This is working!");
