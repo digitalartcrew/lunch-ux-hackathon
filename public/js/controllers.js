@@ -191,8 +191,8 @@ app.controller("NewAdultController", function($scope, $location, AdultService, $
   };
 });
 
-app.controller("AdultController", function($scope, $location, $routeParams, AdultService, $state){
-  AdultService.get({id: $routeParams.id}, function(adult){
+app.controller("AdultController", function($scope, $location, $stateParams, AdultService, $state){
+  AdultService.get({id: $stateParams.id}, function(adult){
      $scope.adult = adult;
   }, function(err){
     $state.go('form.adultsInHousehold1');
@@ -200,8 +200,8 @@ app.controller("AdultController", function($scope, $location, $routeParams, Adul
 });
 
 
-app.controller("EditAdultController", function($scope, $location, $routeParams, AdultService, $state){
-  AdultService.get({id: $routeParams.id},function(adult){
+app.controller("EditAdultController", function($scope, $location, $stateParams, AdultService, $state){
+  AdultService.get({id: $stateParams.id},function(adult){
     $scope.adult = adult;
   }, function(err){
     $state.go('form.adultsInHousehold1');
@@ -238,8 +238,8 @@ app.controller("NewChildController", function($scope, $location, ChildService, $
   };
 });
 
-app.controller("ChildController", function($scope, $location, $routeParams, ChildService, $state){
-  ChildService.get({id: $routeParams.id}, function(child){
+app.controller("ChildController", function($scope, $location, $stateParams, ChildService, $state){
+  ChildService.get({id: $stateParams.id}, function(child){
     $scope.child = child;
   }, function(err){
     $location.path('/');
@@ -247,8 +247,8 @@ app.controller("ChildController", function($scope, $location, $routeParams, Chil
 });
 
 
-app.controller("EditChildController", function($scope, $location, $routeParams, ChildService, $state){
-  ChildService.get({id: $routeParams.id},function(child){
+app.controller("EditChildController", function($scope, $location, $stateParams, ChildService, $state){
+  ChildService.get({id: $stateParams.id},function(child){
     $scope.child = child;
   }, function(err){
     $state.go('form.childrenInHousehold1');

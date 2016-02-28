@@ -78,13 +78,35 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.childrenInHousehold1', {
     url: '/childrenInHousehold1',
     templateUrl: 'views/form-childrenInHousehold1.html',
-    controller: 'ChildrenController'
+    controller: 'ChildrenController',
+    resolve: {
+
+                // A string value resolves to a service
+                ChildService: 'ChildService',
+
+                // A function value resolves to the return
+                // value of the function
+                children: function(ChildService){
+                    return ChildService.query().$promise;;
+                }
+            }
   })
 
   .state('form.childrenInHousehold1Skip', {
     url: '/childrenInHousehold1skip',
     templateUrl: 'views/form-childrenInHousehold1-skip.html',
-    controller: 'ChildrenController'
+    controller: 'ChildrenController',
+    resolve: {
+
+                // A string value resolves to a service
+                ChildService: 'ChildService',
+
+                // A function value resolves to the return
+                // value of the function
+                children: function(ChildService){
+                    return ChildService.query().$promise;;
+                }
+            }
   })
 
   .state('form.adultsInHousehold1', {
@@ -213,7 +235,19 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.child-edit', {
     url: '/children/:id/edit',
     controller: "EditChildController",
-    templateUrl: "views/c-edit.html"
+    templateUrl: "views/c-edit.html",
+    // resolve: {
+    //             ChildService: 'ChildService',
+    //             child: function(ChildService, $routeParams){
+
+    //                 // // Extract customer ID from $routeParams
+    //                 // var childId = $routeParams.id;
+
+    //                 // Return a promise to make sure the customer is completely
+    //                 // resolved before the controller is instantiated
+    //                 return ChildService.get({id: $routeParams.id}).$promise;
+    //             }
+    //           }
   })
 
   $urlRouterProvider.otherwise('login');
