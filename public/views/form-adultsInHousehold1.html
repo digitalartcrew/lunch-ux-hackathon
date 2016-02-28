@@ -21,7 +21,7 @@
             </tr>
             <tr ng-repeat="adult in adults">
               <td>{{adult.firstname}} {{adult.lastname}}</td>
-              <td><a ui-sref="form.adults-edit"><button class="btn btn-primary btn-sm">Edit</button></a></td>
+              <td><a ui-sref="form.adults-edit(id)"><button class="btn btn-primary btn-sm">Edit</button></a></td>
               <td><button class="btn btn-primary btn-sm" ng-click="deleteAdult(adult)">Delete</button></td>
             </tr>
           </table>

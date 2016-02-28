@@ -22,8 +22,6 @@ app.controller("LunchCtrl", function($rootScope, $scope, $http, $location, $stat
 app.controller("FormCtrl", function($rootScope, $scope, $http, $location, $state) {
   $scope.formData = {};
 
-
-
   $scope.step1 = function() {
       $scope.widthbar = "width: 10%";
       $scope.step = "";
@@ -135,26 +133,37 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
 });
 
 app.controller("AdultsController", function($scope, $location, AdultService, $state){
+  //Create A New Adult
    $scope.createAdult = function(adult){
     AdultService.save(adult, function(){
       $state.go('form.adultsInHousehold1');
     });
   };
+  //Query All Adults
   $scope.adults = AdultService.query();
+  //Delete An Adult
   $scope.deleteAdult = function(adult){
     adult.$delete(function(adult){
       $scope.adults.splice($scope.adults.indexOf(adult),1);
     });
   };
-});
+  //Get A Single Adult
+  AdultService.get({id: $scope.id}, function(adult){
+     $scope.adult = adult;
+  }, function(err){
+    $state.go('form.adultsInHousehold1');
+  });
 
-app.controller("MainAdultController", function($scope, $location, AdultService, $state){
-  $scope.createAdult = function(adult){
-    AdultService.save(adult, function(){
-      $state.go('form.adultContactInfo2');
+  $scope.editAdult = function(adult){
+    console.log("This is working!");
+    $scope.adult.$update(function(){
+      $location.path('/');
     });
   };
+
 });
+
+
 
 app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberService){
    $scope.addCaseNumber = function(casenumber){
@@ -183,83 +192,53 @@ app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberServic
 
 
 
-app.controller("NewAdultController", function($scope, $location, AdultService, $state){
-  $scope.createAdult = function(adult){
-    AdultService.save(adult, function(){
-      $state.go('form.adultsInHousehold1');
-    });
-  };
-});
-
-app.controller("AdultController", function($scope, $location, $stateParams, AdultService, $state){
-  AdultService.get({id: $stateParams.id}, function(adult){
-     $scope.adult = adult;
-  }, function(err){
-    $state.go('form.adultsInHousehold1');
-  });
-});
-
-
-app.controller("EditAdultController", function($scope, $location, $stateParams, AdultService, $state){
-  AdultService.get({id: $stateParams.id},function(adult){
-    $scope.adult = adult;
-  }, function(err){
-    $state.go('form.adultsInHousehold1');
-  });
-  $scope.editAdult = function(adult){
-    console.log("This is working!");
-    $scope.adult.$update(function(){
-      $location.path('/');
-    });
-  };
-});
-
-
-app.controller("ChildrenController", function($scope, $location, ChildService, $state){
+app.controller("ChildrenController", function($scope, $location, ChildService, $state, $stateParams){
+  //Get All Children
   $scope.children = ChildService.query();
+  //Delete A Child
   $scope.deleteChild = function(child){
     child.$delete(function(child){
       $scope.children.splice($scope.children.indexOf(child),1);
     });
   };
-});
-
-app.controller("NewChildController", function($scope, $location, ChildService, $state){
-  $scope.createChild = function(child){
+  //Create a Child
+   $scope.createChild = function(child){
     ChildService.save(child, function(){
       $state.go('form.childrenInHousehold1');
     });
-  };
-
+  }
+  //Create child option 2
   $scope.createChild2 = function(child){
     ChildService.save(child, function(){
       $state.go('form.childrenInHousehold1Skip');
     });
   };
-});
-
-app.controller("ChildController", function($scope, $location, $stateParams, ChildService, $state){
-  ChildService.get({id: $stateParams.id}, function(child){
+  //Grab Single Child
+   ChildService.get({id: $stateParams.id}, function(child){
     $scope.child = child;
   }, function(err){
     $location.path('/');
   });
-});
-
-
-app.controller("EditChildController", function($scope, $location, $stateParams, ChildService, $state){
-  ChildService.get({id: $stateParams.id},function(child){
-    $scope.child = child;
-  }, function(err){
-    $state.go('form.childrenInHousehold1');
-  });
-  $scope.editChild = function(child){
+   //Edit A Child
+   $scope.editChild = function(child){
     console.log("This is working!");
     $scope.child.$update(function(){
       $state.go('form.childrenInHousehold1');
     });
   };
+  //Check Child Status
+  $scope.childStatus = function(){
+    if ($scope.fosterchild || $scope.runaway || $scope.homeless || $scope.headstart){
+      $state.go('form.childrenInHousehold1Skip');
+    }else if ($scope.fosterchildsome || $scope.runawaysome || $scope.homelesssome || $scope.headstartsome){
+      $state.go('form.childrenInHousehold1');
+    }else{
+      $state.go('form.childrenInHousehold1');
+    }
+  };
 });
+
+
 
 app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state){
   $scope.adults = AdultService.query();

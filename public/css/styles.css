@@ -78,6 +78,20 @@ body{
   height: 80px;
 }
 
+/*@media screen and (max-width: 520px) {
+    .blocks {
+         width: 0px;
+        height: 0px;
+    }
+}*/
+
+ul {list-style-type:none;}
+/*ul li {width:100px;float:left;}*/
+@media screen and (max-width:520px) {
+    ul li#six {clear:left;},
+
+}
+
 .unique {
   width: 50%;
 }

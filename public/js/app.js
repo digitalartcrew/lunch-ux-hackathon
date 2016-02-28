@@ -31,7 +31,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
   })
 
   .state('form.case-edit', {
-     url: '/casenumbers/:id/edit',
+     url: '/casenumbers/:id',
     controller: "AssistCtrl",
     templateUrl: "views/case-edit.html"
   })
@@ -67,7 +67,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.childStatus1', {
     url: '/childStatus1',
     templateUrl: 'views/form-childStatus1.html',
-    controller: 'ChildStatusController'
+    controller: 'ChildrenController'
   })
 
   .state('form.childStatus2', {
@@ -184,27 +184,27 @@ app.config(function($stateProvider,$urlRouterProvider) {
     controller: "ReviewController"
   })
 
-  // .state('form.adults', {
-  //   url: '/adults',
-  //   controller: "MainAdultController",
-  //   templateUrl: "views/form-adultContactInfo1.html"
-  // })
+  .state('form.adults', {
+    url: '/adults',
+    controller: "AdultsController",
+    templateUrl: "views/form-adultContactInfo1.html"
+  })
 
   .state('form.adults-new', {
     url: '/adults/new',
-    controller: "NewAdultController",
+    controller: "AdultsController",
     templateUrl: "views/a-new.html"
   })
 
-  .state('form.adults-single', {
-    url: '/adults/:id',
-    controller: "AdultController",
-    templateUrl: "views/a-show.html"
-  })
+  // .state('form.adults-single', {
+  //   url: '/adults/:id',
+  //   controller: "AdultController",
+  //   templateUrl: "views/a-show.html"
+  // })
 
   .state('form.adults-edit', {
-    url: '/adults/:id/edit',
-    controller: "EditAdultController",
+    url: '/adults/:id',
+    controller: "AdultsController",
     templateUrl: "views/a-edit.html"
   })
 
@@ -216,21 +216,21 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
   .state('form.child-new', {
     url: '/children/new',
-    controller: "NewChildController",
+    controller: "ChildrenController",
     templateUrl: "views/c-new.html"
   })
 
    .state('form.child-new2', {
     url: '/children/newnew',
-    controller: "NewChildController",
+    controller: "ChildrenController",
     templateUrl: "views/c-new2.html"
   })
 
-  .state('form.child-single', {
-    url: '/children/:id',
-    controller: "ChildController",
-    templateUrl: "views/c-show.html"
-  })
+  // .state('form.child-single', {
+  //   url: '/children/:id',
+  //   controller: "ChildController",
+  //   templateUrl: "views/c-show.html"
+  // })
 
    .state('form.thanks', {
     url: '/thanks',
@@ -238,8 +238,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
   })
 
   .state('form.child-edit', {
-    url: '/children/:id/edit',
-    controller: "EditChildController",
+    url: '/children/:id',
+    controller: "ChildrenController",
     templateUrl: "views/c-edit.html",
     // resolve: {
     //             ChildService: 'ChildService',

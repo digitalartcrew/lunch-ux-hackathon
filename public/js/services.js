@@ -7,11 +7,7 @@
 // }]);
 
 app.service("AdultService",['$resource', function($resource){
-	return $resource('/api/adults/:id', {id: '@_id'}, {
-		update : {
-			method: 'PUT'
-		}
-	});
+	return $resource('/api/adults/:id', {id: '@_id'});
 }]);
 
 app.service("CaseNumberService",['$resource', function($resource){
