@@ -232,6 +232,11 @@ app.config(function($stateProvider,$urlRouterProvider) {
     templateUrl: "views/c-show.html"
   })
 
+   .state('form.thanks', {
+    url: '/thanks',
+    templateUrl: "views/form-thanks.html"
+  })
+
   .state('form.child-edit', {
     url: '/children/:id/edit',
     controller: "EditChildController",
