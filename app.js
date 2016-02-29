@@ -6,6 +6,7 @@ var express = require('express');
 			adultRoutes = require("./routes/adults"),
 			childRoutes = require("./routes/children"),
 			caseNumberRoutes = require("./routes/casenumbers"),
+			signatureRoutes = require("./routes/signatures"),
 			path = require("path");
 
 app.use(express.static(__dirname + '/public'));
@@ -41,6 +42,7 @@ app.use(methodOverride('_method'));
 app.use('/api/adults', adultRoutes);
 app.use('/api/children', childRoutes);
 app.use('/api/casenumbers', caseNumberRoutes);
+app.use('/api/signatures', signatureRoutes);
 
 //Routes
 require('./routes/auth.js')(app,passport); //load our routes and full configured passport

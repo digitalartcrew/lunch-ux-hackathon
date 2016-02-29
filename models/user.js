@@ -4,6 +4,7 @@ var bcrypt   = require('bcrypt-nodejs');
 var Adult = require('./adult');
 var Child = require('./child');
 var Casenumber = require('./casenumber');
+var Signature = require('./signature');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
@@ -20,6 +21,10 @@ var userSchema = mongoose.Schema({
   casenumbers: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Casenumber"
+  }],
+   signatures: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Signature"
   }]
 });
 

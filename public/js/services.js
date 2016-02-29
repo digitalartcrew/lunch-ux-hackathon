@@ -9,13 +9,21 @@
 app.service("AdultService",['$resource', function($resource){
     return $resource('/api/adults/:id', {id: '@_id'}, {
         update : {
-            method: 'PUT'
+            method: 'PUT', isArray: true
         }
     });
 }]);
 
 app.service("CaseNumberService",['$resource', function($resource){
     return $resource('/api/casenumbers/:id', {id: '@_id'}, {
+        update : {
+            method: 'PUT'
+        }
+    });
+}]);
+
+app.service("SignatureService",['$resource', function($resource){
+    return $resource('/api/signatures/:id', {id: '@_id'}, {
         update : {
             method: 'PUT'
         }

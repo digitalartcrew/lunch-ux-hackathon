@@ -11,24 +11,25 @@
       <div class="panel-heading">ADULT CONTACT INFORMATION</div>
       <div class="panel-body">
 
+       <div class="container">
+        <form role="form" ng-submit="addSignature(signature)">
 
-<h4>Signature of Adult Completing Application (required)</h4>
-<h5>The person signing is furnishing true information and to advise that person that the application is being made in connection with the receipt of Federal funds; School officials may verify the information on the application; Deliberate misrepresentation of the information may subject the applicant to prosecution under State and Federal statutes.</h5>
-<div ng-controller="SignatureController">
- 
- 
-    <div class="form-group" id="">
-      <label for="signature">ENTER NAME (e-signature)</label>
-       <j-signature-directive sig="customSignature" save="testAction" bg-color="#00f" color="#000000"></j-signature-directive>
-    </div>
+        <h4>Signature of Adult Completing Application (required)</h4>
+          <h5>The person signing is furnishing true information and to advise that person that the application is being made in connection with the receipt of Federal funds; School officials may verify the information on the application; Deliberate misrepresentation of the information may subject the applicant to prosecution under State and Federal statutes.</h5>
+          <div ng-controller="SignatureController">
 
-    <div class="form-group spacing" id="daytime">
-      <label for="date">TODAY'S DATE</label>
-      <input type="date" class="form-control" id="date">
-    </div>
-   
+          <div class="form-group" id="">
+            <label for="signature">ENTER NAME (e-signature)</label>
+             <j-signature-directive ng-model="signature.signature" sig="customSignature" save="testAction" bg-color="#00f" color="#000000"></j-signature-directive>
+          </div>
+
+          <div class="form-group spacing" id="daytime">
+            <label for="date">TODAY'S DATE</label>
+            <input ng-model="signature.date" type="date" class="form-control" id="date">
+          </div>
+          </div>
 </div>
-</div>
+
 
 <div class="form-group row">
     <div class="inline-block">
@@ -40,16 +41,23 @@
           <a ui-sref="#" class="btn btn-primary btn-lg">
           Save
           </a>
-          <a ng-click="step4()" ui-sref="form.assistanceProgram1" class="btn btn-primary btn-lg">
+          <a ng-click="step4()" ui-sref="form.assistanceProgram1" class="btn btn-primary btn-lg" ng-click="addSignature(signature)">
           Continue
           </a>
-          </div>
         </div>
-    </div>
-</div>
-  </div>
-      </div>
-    </div>
-  </div>
+        </div>
+        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+
+      
+  
+
 
 

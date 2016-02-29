@@ -132,7 +132,13 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
   };
 });
 
-app.controller("AdultsController", function($scope, $location, AdultService, $state, $stateParams){
+app.controller("AdultsController", function($scope, $location, AdultService, SignatureService, $state, $stateParams){
+  
+    $scope.addSignature = function(signature){
+    SignatureService.save(signature, function(){
+      console.log(signature)
+    });
+  };
   //Create A New Adult
    $scope.createAdult = function(adult){
     AdultService.save(adult, function(){
@@ -256,10 +262,11 @@ app.controller("ChildrenController", function($scope, $location, ChildService, $
 
 
 
-app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, $state){
+app.controller("ReviewController", function($scope, $location, AdultService, ChildService, CaseNumberService, SignatureService, $state){
   $scope.adults = AdultService.query();
   $scope.children = ChildService.query();
   $scope.casenumbers = CaseNumberService.query();
+  $scope.signatures = SignatureService.query();
 
   $scope.deleteAdult = function(adult){
     adult.$delete(function(adult){
