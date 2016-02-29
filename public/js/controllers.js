@@ -286,6 +286,11 @@ app.controller("ReviewController", function($scope, $location, AdultService, Chi
     });
   };
 
+   $scope.deleteSignature = function(signature){
+    signature.$delete(function(signature){
+      $scope.signatures.splice($scope.signatures.indexOf(signature),1);
+    });
+  };
 
 });
 

@@ -41,26 +41,7 @@ regardless of age.</p>
         <br>
         <div class="form-group spacing firstRow">
          <label for="age">Age</label><br>
-         <select class="form-control" ng-model="child.age" name="age">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-        </select>
+         <input type="text" ng-model="child.age"></input>
       </div>
 
       <div class="form-group spacing">
@@ -76,25 +57,24 @@ regardless of age.</p>
 
     <div class="row">
 
-      <div class=" col-md-3 form-group spacing firstRow">
+      <div ng-model="child.status" class=" col-md-3 form-group spacing firstRow">
           <label for="childstatus">Child Status</label><br>
-           <select ng-model="child.status" class="form-control" name="student">
-          <div class="checkbox">
-           <label><option  type="checkbox" value="Foster Child">Foster Child</option></label>
-         </div>
-         <div class="checkbox">
-           <label><option type="checkbox" value="Head Start">Head Start</option></label>
-         </div>
-         <div class="checkbox">
-           <label><option type="checkbox" value="Homeless">Homeless</option></label>
-         </div>
-         <div class="checkbox">
-           <label><option type="checkbox" value="Runaway">Runaway</option></label>
-         </div>
-         <div class="checkbox">
-           <label><option type="checkbox" value="Migrant">Migrant</option></label>
-         </div>
-         </select>
+        
+         <p>
+           <label><input  type="checkbox" value="Foster Child">  Foster Child</label>
+           </p>
+        <p>
+           <label><input type="checkbox" value="Head Start">  Head Start</label>
+           </p>
+        <p>
+           <label><input type="checkbox" value="Homeless">  Homeless</label>
+           </p>
+        <p>
+           <label><input type="checkbox" value="Runaway">  Runaway</label>
+           </p>
+        <p>
+           <label><input type="checkbox" value="Migrant">  Migrant</label>
+           </p>
      </div>
 
      <div class="col-md-3 form-group spacing firstRow">

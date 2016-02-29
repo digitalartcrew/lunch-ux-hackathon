@@ -42,7 +42,7 @@ app.service("ChildService",['$resource', function($resource){
 app.directive('jSignatureDirective', function() {
     return {
         restrict: 'E',
-        template: '<div id="signature"><div id="jSignature"></div><button class="btn btn-primary btn-lg" ng-click="reset()">Reset</button></div>',
+        template: '<div id="signature"><div id="jSignature">{{signature.signature}}</div><button class="btn btn-primary btn-lg" ng-click="reset()">Reset</button></div>',
         scope: {
             sig: '=',
             width: '@',
