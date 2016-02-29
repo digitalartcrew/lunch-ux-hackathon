@@ -372,6 +372,7 @@ input[type=checkbox] {
 
 .csLabel{
   display: inline-block;
+  margin-right: -70px;
 }
 
 .csContainer{
