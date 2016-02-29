@@ -136,7 +136,7 @@ app.controller("AdultsController", function($scope, $location, AdultService, $st
   //Create A New Adult
    $scope.createAdult = function(adult){
     AdultService.save(adult, function(){
-      $state.go('form.adultsInHousehold1');
+  
     });
   };
   //Query All Adults
