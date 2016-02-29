@@ -11,6 +11,10 @@ body{
   background-color: #fff;
 }
 
+.navbar-primary{
+  background-color: #fff;
+}
+
 #usda{
 
   width: 3%;
@@ -250,7 +254,7 @@ ul {list-style-type:none;}
 #signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
 
 #form-views{
-  margin-top: 180px;
+  margin-top: 210px;
   padding-left: 50px;
   padding-right: 120px;
 }

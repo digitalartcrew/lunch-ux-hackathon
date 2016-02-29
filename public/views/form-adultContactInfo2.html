@@ -1,5 +1,7 @@
 <div class="container-fluid">
   <div class="row">
+
+  <!--info panel-->
     <div class="col-xs-3 panel-primary">
      <div class="panel-heading">INFO CENTER</div>
       <div class="panel-body">
@@ -11,14 +13,16 @@
       <div class="panel-heading">ADULT CONTACT INFORMATION</div>
       <div class="panel-body">
 
-       <div class="container">
+    
+        <div ng-controller="SignatureController">
         <form role="form" ng-submit="addSignature(signature)">
 
-        <h4>Signature of Adult Completing Application (required)</h4>
-          <h5>The person signing is furnishing true information and to advise that person that the application is being made in connection with the receipt of Federal funds; School officials may verify the information on the application; Deliberate misrepresentation of the information may subject the applicant to prosecution under State and Federal statutes.</h5>
-          <div ng-controller="SignatureController">
+        
+         
 
           <div class="form-group" id="">
+            <h4>Signature of Adult Completing Application (required)</h4>
+              <h5>The person signing is furnishing true information and to advise that person that the application is being made in connection with the receipt of Federal funds; School officials may verify the information on the application; Deliberate misrepresentation of the information may subject the applicant to prosecution under State and Federal statutes.</h5>
             <label for="signature">ENTER NAME (e-signature)</label>
              <j-signature-directive ng-model="signature.signature" sig="customSignature" save="testAction" bg-color="#00f" color="#000000"></j-signature-directive>
           </div>
@@ -27,8 +31,9 @@
             <label for="date">TODAY'S DATE</label>
             <input ng-model="signature.date" type="date" class="form-control" id="date">
           </div>
+
           </div>
-</div>
+  
 
 
 <div class="form-group row">
@@ -48,12 +53,15 @@
         </div>
         </div>
         </div>
+
         </form>
         </div>
         </div>
         </div>
         </div>
         </div>
+     
+  
         
 
       
