@@ -45,7 +45,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.adultContactInfo1', {
     url: '/adultContactInfo1',
     templateUrl: 'views/form-adultContactInfo1.html',
-    controller: "MainAdultController"
+    controller: "AdultsController"
   })
 
   .state('form.adultContactInfo2', {
@@ -78,35 +78,13 @@ app.config(function($stateProvider,$urlRouterProvider) {
   .state('form.childrenInHousehold1', {
     url: '/childrenInHousehold1',
     templateUrl: 'views/form-childrenInHousehold1.html',
-    controller: 'ChildrenController',
-    resolve: {
-
-                // A string value resolves to a service
-                ChildService: 'ChildService',
-
-                // A function value resolves to the return
-                // value of the function
-                children: function(ChildService){
-                    return ChildService.query().$promise;;
-                }
-            }
+    controller: 'ChildrenController'
   })
 
   .state('form.childrenInHousehold1Skip', {
     url: '/childrenInHousehold1skip',
     templateUrl: 'views/form-childrenInHousehold1-skip.html',
-    controller: 'ChildrenController',
-    resolve: {
-
-                // A string value resolves to a service
-                ChildService: 'ChildService',
-
-                // A function value resolves to the return
-                // value of the function
-                children: function(ChildService){
-                    return ChildService.query().$promise;;
-                }
-            }
+    controller: 'ChildrenController'
   })
 
   .state('form.adultsInHousehold1', {
@@ -203,8 +181,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
   // })
 
   .state('form.adults-edit', {
-    url: '/adults/:id',
-    controller: "AdultsController",
+    url: '/adults/{{adult._id}}/edit',
+    controller: "EditAdultController",
     templateUrl: "views/a-edit.html"
   })
 
@@ -238,7 +216,7 @@ app.config(function($stateProvider,$urlRouterProvider) {
   })
 
   .state('form.child-edit', {
-    url: '/children/:id',
+    url: '/children/{{child._id}}/edit',
     controller: "ChildrenController",
     templateUrl: "views/c-edit.html",
     // resolve: {

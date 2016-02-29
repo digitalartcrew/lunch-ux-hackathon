@@ -132,7 +132,7 @@ app.controller("LoginCtrl", function($location, $scope, $http, $rootScope, $stat
   };
 });
 
-app.controller("AdultsController", function($scope, $location, AdultService, $state){
+app.controller("AdultsController", function($scope, $location, AdultService, $state, $stateParams){
   //Create A New Adult
    $scope.createAdult = function(adult){
     AdultService.save(adult, function(){
@@ -147,22 +147,38 @@ app.controller("AdultsController", function($scope, $location, AdultService, $st
       $scope.adults.splice($scope.adults.indexOf(adult),1);
     });
   };
-  //Get A Single Adult
-  // AdultService.get({id: $scope.id}, function(adult){
-  //    $scope.adult = adult;
+  //Grab a single adult
+  // AdultService.get({id: $stateParams.id},function(adult){
+  //   $scope.adult = adult;
   // }, function(err){
-  //   $state.go('form.adultsInHousehold1');
+  //   $location.path('/adultsInHousehold1');
   // });
-  //Edit an adult
-  $scope.editAdult = function(adult){
-    console.log("This is working!");
-    $scope.adult.$update(function(){
-      $location.path('/');
-    });
-  };
+  // //Edit an adult
+  // $scope.editAdult = function(adult){
+  //   console.log("This is working!");
+  //   $scope.adult.$update(function(){
+  //     $location.path('/');
+  //   });
+  // };
 
 });
 
+app.controller("EditAdultController", function($scope, $location, $stateParams, AdultService, $state){
+  AdultService.get({id: $stateParams.id},function(){
+    $id = adult.id;
+    console.log($id);
+  });
+
+   $scope.state = $state.current
+    $scope.params = $stateParams; 
+
+  $scope.editAdult = function(adult){
+    console.log("This is working!");
+    $scope.adult.$update(function(){
+       $state.go('form.adultsInHousehold1');
+    });
+  };
+});
 
 
 app.controller("AssistCtrl", function($scope, $location, $state,CaseNumberService){
