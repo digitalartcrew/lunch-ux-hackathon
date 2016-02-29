@@ -6,6 +6,18 @@ body{
   margin-top: -20px;
 }*/
 
+.navbar-brand{
+  margin-bottom: -50px;
+}
+
+#usda{
+
+  width: 3%;
+  float: left;
+ /* margin: 5px;*/
+ margin-right: 5px;
+}
+
 .myWizard{
   padding-left: 50px;
   padding-right: 120px;
