@@ -170,14 +170,14 @@ app.controller("AdultsController", function($scope, $location, AdultService, Sig
 });
 
 app.controller("EditAdultController", function($scope, $location, $stateParams, AdultService, $state){
-  AdultService.get({id: $stateParams.id},function(){
-    $id = adult.id;
-    console.log($id);
-  });
+  $scope.loadAdult =  function(adult){
+    AdultService.get({id: $stateParams.id});
+    console.log($stateParams.id);
+  };
 
-   $scope.state = $state.current
-    $scope.params = $stateParams; 
+  $scope.loadAdult();
 
+  
   $scope.editAdult = function(adult){
     console.log("This is working!");
     $scope.adult.$update(function(){
